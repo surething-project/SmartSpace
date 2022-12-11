@@ -1,0 +1,33 @@
+// verifier.proto
+syntax = "proto3";
+
+option java_multiple_files = true;
+
+package pt.ulisboa.tecnico.surespace.verifier.grpc;
+
+//
+// Messages
+//
+
+message PingRequest {
+}
+
+message PingResponse {
+}
+
+message VerifyProofRequest {
+  bytes signedContent = 1;
+}
+
+message VerifyProofResponse {
+  bytes signedContent = 1;
+}
+
+//
+// Services
+//
+
+service VerifierService {
+  rpc Ping (PingRequest) returns (PingResponse);
+  rpc VerifyProof(VerifyProofRequest) returns (VerifyProofResponse);
+}

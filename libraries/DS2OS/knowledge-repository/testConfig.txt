@@ -1,0 +1,10 @@
+#This config file is used for the unittests.
+#Use KORconfig.changeConfigFile(testConfig.txt) in the setUp call
+#of the unittest and change it back to config.txt in the cleanup.
+kor.archive=1
+ka.agentName=agent1
+kor.db.persist=0
+kor.db.username=ds2os
+kor.db.password=thisMustBeSecure
+kor.db.location=hsqldb/db
+test.configureThis=42

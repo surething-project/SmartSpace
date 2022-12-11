@@ -1,0 +1,8 @@
+kor.archive.enabled=1
+kor.archive.limit=10
+ka.agentName=agent1
+kor.db.persist=0
+kor.db.username=ds2os
+kor.db.password=thisMustBeSecure
+kor.db.location=hsqldb/db
+ds2os.charset=UTF-8

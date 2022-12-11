@@ -1,0 +1,33 @@
+// long_term_ca.proto
+syntax = "proto3";
+
+option java_multiple_files = true;
+
+package pt.ulisboa.tecnico.surespace.long_term_ca.grpc;
+
+//
+// Messages
+//
+
+message PingRequest {
+}
+
+message PingResponse {
+}
+
+message RegisterEntityRequest {
+  bytes signedContent = 1;
+}
+
+message RegisterEntityResponse {
+  bytes signedContent = 1;
+}
+
+//
+// Services
+//
+
+service LongTermCAService {
+  rpc Ping (PingRequest) returns (PingResponse);
+  rpc RegisterEntity (RegisterEntityRequest) returns (RegisterEntityResponse);
+}

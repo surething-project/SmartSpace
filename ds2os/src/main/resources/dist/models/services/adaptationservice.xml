@@ -1,0 +1,9 @@
+<model type="/basic/composed">
+    <beacon type="/complex/beacon"/>
+    <isLocked type="/basic/boolean" writer="orchestrationservice"/>
+    <isStarted type="/basic/boolean" writer="orchestrationservice"/>
+    <fragmentCount type="/basic/number" writer="orchestrationservice"/>
+    <fragmentLength type="/basic/number" writer="orchestrationservice"/>
+    <fragmentCurrent type="/basic/number" writer="orchestrationservice"/>
+    <seed type="/basic/number" writer="orchestrationservice"/>
+</model>

@@ -1,0 +1,217 @@
+@startuml
+
+title __UTIL's Class Diagram__\n
+
+  namespace pt.ulisboa.tecnico.surespace.ds2os.service {
+    namespace util {
+      abstract class pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.ds2os.service {
+    namespace util {
+      abstract class pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.AdaptationService {
+          {static} + BEACON : String
+          {static} + FRAGMENT_COUNT : String
+          {static} + FRAGMENT_CURRENT : String
+          {static} + FRAGMENT_LENGTH : String
+          {static} + IS_LOCKED : String
+          {static} + IS_STARTED : String
+          {static} + SEED : String
+          {static} + WITNESS : String
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.ds2os.service {
+    namespace util {
+      abstract class pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.AdaptationService.Beacon {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.ds2os.service {
+    namespace util {
+      abstract class pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.AdaptationService.Witness {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.ds2os.service {
+    namespace util {
+      abstract class pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.LightAdaptationService {
+          {static} + BEACON : String
+          {static} + WITNESS : String
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.ds2os.service {
+    namespace util {
+      abstract class pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.LightAdaptationService.Beacon {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.ds2os.service {
+    namespace util {
+      abstract class pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.LightAdaptationService.Witness {
+          {static} + INTENSITY : String
+          {static} + INTENSITY_SAMPLING_RATE : String
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.ds2os.service {
+    namespace util {
+      abstract class pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.LightAdaptationService.Witness.Intensity {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.ds2os.service {
+    namespace util {
+      abstract class pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.LightAdaptationService.Witness.IntensitySamplingRate {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.ds2os.service {
+    namespace util {
+      abstract class pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.LocalizationService {
+          {static} + LOCATION : String
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.ds2os.service {
+    namespace util {
+      abstract class pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.LocalizationService.Location {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.ds2os.service {
+    namespace util {
+      abstract class pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.Location {
+          {static} + VALUE : String
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.ds2os.service {
+    namespace util {
+      abstract class pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.Property {
+          {static} + VALUE : String
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.ds2os.service {
+    namespace util {
+      abstract class pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.SmartDevice {
+          {static} + IS_ON : String
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.ds2os.service {
+    namespace util {
+      abstract class pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.SoundAdaptationService {
+          {static} + BEACON : String
+          {static} + WITNESS : String
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.ds2os.service {
+    namespace util {
+      abstract class pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.SoundAdaptationService.Beacon {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.ds2os.service {
+    namespace util {
+      abstract class pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.SoundAdaptationService.Witness {
+          {static} + AMPLITUDE : String
+          {static} + AMPLITUDE_SAMPLING_RATE : String
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.ds2os.service {
+    namespace util {
+      abstract class pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.SoundAdaptationService.Witness.Amplitude {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.ds2os.service {
+    namespace util {
+      abstract class pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.SoundAdaptationService.Witness.AmplitudeSamplingRate {
+      }
+    }
+  }
+  
+
+  pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool +-down- pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.AdaptationService
+  pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool +-down- pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.LightAdaptationService
+  pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool +-down- pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.LocalizationService
+  pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool +-down- pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.Location
+  pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool +-down- pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.Property
+  pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool +-down- pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.SmartDevice
+  pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool +-down- pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.SoundAdaptationService
+  pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.AdaptationService +-down- pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.AdaptationService.Beacon
+  pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.AdaptationService +-down- pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.AdaptationService.Witness
+  pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.AdaptationService.Beacon -up-|> pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.SmartDevice
+  pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.AdaptationService.Witness -up-|> pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.SmartDevice
+  pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.LightAdaptationService -up-|> pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.AdaptationService
+  pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.LightAdaptationService +-down- pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.LightAdaptationService.Beacon
+  pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.LightAdaptationService +-down- pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.LightAdaptationService.Witness
+  pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.LightAdaptationService.Beacon -up-|> pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.AdaptationService.Beacon
+  pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.LightAdaptationService.Witness -up-|> pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.AdaptationService.Witness
+  pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.LightAdaptationService.Witness +-down- pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.LightAdaptationService.Witness.Intensity
+  pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.LightAdaptationService.Witness +-down- pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.LightAdaptationService.Witness.IntensitySamplingRate
+  pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.LightAdaptationService.Witness.Intensity -up-|> pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.Property
+  pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.LightAdaptationService.Witness.IntensitySamplingRate -up-|> pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.Property
+  pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.LocalizationService +-down- pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.LocalizationService.Location
+  pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.LocalizationService.Location -up-|> pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.Location
+  pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.SoundAdaptationService -up-|> pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.AdaptationService
+  pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.SoundAdaptationService +-down- pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.SoundAdaptationService.Beacon
+  pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.SoundAdaptationService +-down- pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.SoundAdaptationService.Witness
+  pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.SoundAdaptationService.Beacon -up-|> pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.AdaptationService.Beacon
+  pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.SoundAdaptationService.Witness -up-|> pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.AdaptationService.Witness
+  pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.SoundAdaptationService.Witness +-down- pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.SoundAdaptationService.Witness.Amplitude
+  pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.SoundAdaptationService.Witness +-down- pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.SoundAdaptationService.Witness.AmplitudeSamplingRate
+  pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.SoundAdaptationService.Witness.Amplitude -up-|> pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.Property
+  pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.SoundAdaptationService.Witness.AmplitudeSamplingRate -up-|> pt.ulisboa.tecnico.surespace.ds2os.service.util.ConstantPool.Property
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

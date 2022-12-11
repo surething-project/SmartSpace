@@ -1,0 +1,4 @@
+<model type="/complex/witness" writer="">
+    <intensity type="/complex/property"/>
+    <intensitySamplingRate type="/complex/property"/>
+</model>

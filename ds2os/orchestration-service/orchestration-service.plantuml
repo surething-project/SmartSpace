@@ -1,0 +1,116 @@
+@startuml
+
+title __ORCHESTRATION-SERVICE's Class Diagram__\n
+
+  namespace pt.ulisboa.tecnico.surespace.ds2os.service {
+    class pt.ulisboa.tecnico.surespace.ds2os.service.OrchestrationService {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.ds2os.service {
+    namespace exception {
+      class pt.ulisboa.tecnico.surespace.ds2os.service.exception.OrchestrationServiceException {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.ds2os.service {
+    namespace manager {
+      class pt.ulisboa.tecnico.surespace.ds2os.service.manager.AdaptationServiceViewManager {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.ds2os.service {
+    namespace task {
+      class pt.ulisboa.tecnico.surespace.ds2os.service.task.OrchestratorUpdateTask {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.ds2os.service {
+    namespace view {
+      abstract class pt.ulisboa.tecnico.surespace.ds2os.service.view.AdaptationServiceView {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.ds2os.service {
+    namespace view {
+      abstract class pt.ulisboa.tecnico.surespace.ds2os.service.view.AdaptationServiceViewFactory {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.ds2os.service {
+    namespace view {
+      class pt.ulisboa.tecnico.surespace.ds2os.service.view.LightAdaptationServiceView {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.ds2os.service {
+    namespace view {
+      class pt.ulisboa.tecnico.surespace.ds2os.service.view.LocalizationServiceView {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.ds2os.service {
+    namespace view {
+      class pt.ulisboa.tecnico.surespace.ds2os.service.view.SoundAdaptationServiceView {
+      }
+    }
+  }
+  
+
+  pt.ulisboa.tecnico.surespace.ds2os.service.OrchestrationService -up-|> pt.ulisboa.tecnico.surespace.ds2os.service.Service
+  pt.ulisboa.tecnico.surespace.ds2os.service.exception.OrchestrationServiceException -up-|> pt.ulisboa.tecnico.surespace.common.exception.BroadException
+  pt.ulisboa.tecnico.surespace.ds2os.service.manager.AdaptationServiceViewManager o-- pt.ulisboa.tecnico.surespace.common.proof.LocationProofProperties : proofProperties
+  pt.ulisboa.tecnico.surespace.ds2os.service.task.OrchestratorUpdateTask -up-|> java.util.TimerTask
+  pt.ulisboa.tecnico.surespace.ds2os.service.task.OrchestratorUpdateTask o-- pt.ulisboa.tecnico.surespace.ds2os.service.OrchestrationService : service
+  pt.ulisboa.tecnico.surespace.ds2os.service.view.AdaptationServiceView -up-|> pt.ulisboa.tecnico.surespace.ds2os.service.view.ServiceView
+  pt.ulisboa.tecnico.surespace.ds2os.service.view.AdaptationServiceView o-- pt.ulisboa.tecnico.surespace.common.proof.Beacon : beacon
+  pt.ulisboa.tecnico.surespace.ds2os.service.view.AdaptationServiceView o-- pt.ulisboa.tecnico.surespace.ds2os.service.domain.RegularNode : beaconIsOn
+  pt.ulisboa.tecnico.surespace.ds2os.service.view.AdaptationServiceView o-- pt.ulisboa.tecnico.surespace.ds2os.service.domain.RegularNode : beaconNode
+  pt.ulisboa.tecnico.surespace.ds2os.service.view.AdaptationServiceView o-- pt.ulisboa.tecnico.surespace.ds2os.service.domain.RegularNode : fragmentCount
+  pt.ulisboa.tecnico.surespace.ds2os.service.view.AdaptationServiceView o-- pt.ulisboa.tecnico.surespace.ds2os.service.domain.RegularNode : fragmentCurrent
+  pt.ulisboa.tecnico.surespace.ds2os.service.view.AdaptationServiceView o-- pt.ulisboa.tecnico.surespace.ds2os.service.domain.RegularNode : fragmentLength
+  pt.ulisboa.tecnico.surespace.ds2os.service.view.AdaptationServiceView o-- pt.ulisboa.tecnico.surespace.ds2os.service.domain.RegularNode : isLocked
+  pt.ulisboa.tecnico.surespace.ds2os.service.view.AdaptationServiceView o-- pt.ulisboa.tecnico.surespace.ds2os.service.domain.RegularNode : isStarted
+  pt.ulisboa.tecnico.surespace.ds2os.service.view.AdaptationServiceView o-- pt.ulisboa.tecnico.surespace.ds2os.service.domain.RegularNode : seedNode
+  pt.ulisboa.tecnico.surespace.ds2os.service.view.AdaptationServiceView o-- pt.ulisboa.tecnico.surespace.common.signal.Signal : signal
+  pt.ulisboa.tecnico.surespace.ds2os.service.view.AdaptationServiceView o-- pt.ulisboa.tecnico.surespace.common.signal.Fragment : fragment
+  pt.ulisboa.tecnico.surespace.ds2os.service.view.LightAdaptationServiceView -up-|> pt.ulisboa.tecnico.surespace.ds2os.service.view.AdaptationServiceView
+  pt.ulisboa.tecnico.surespace.ds2os.service.view.LightAdaptationServiceView o-- pt.ulisboa.tecnico.surespace.common.signal.property.Intensity : intensity
+  pt.ulisboa.tecnico.surespace.ds2os.service.view.LightAdaptationServiceView o-- pt.ulisboa.tecnico.surespace.common.proof.Witness : witness
+  pt.ulisboa.tecnico.surespace.ds2os.service.view.LightAdaptationServiceView o-- pt.ulisboa.tecnico.surespace.ds2os.service.domain.RegularNode : witnessIntensitySamplingRateValue
+  pt.ulisboa.tecnico.surespace.ds2os.service.view.LightAdaptationServiceView o-- pt.ulisboa.tecnico.surespace.ds2os.service.domain.RegularNode : witnessIntensityValue
+  pt.ulisboa.tecnico.surespace.ds2os.service.view.LightAdaptationServiceView o-- pt.ulisboa.tecnico.surespace.ds2os.service.domain.RegularNode : witnessIsOn
+  pt.ulisboa.tecnico.surespace.ds2os.service.view.LocalizationServiceView -up-|> pt.ulisboa.tecnico.surespace.ds2os.service.view.ServiceView
+  pt.ulisboa.tecnico.surespace.ds2os.service.view.LocalizationServiceView o-- pt.ulisboa.tecnico.surespace.ds2os.service.domain.RegularNode : location
+  pt.ulisboa.tecnico.surespace.ds2os.service.view.LocalizationServiceView o-- pt.ulisboa.tecnico.surespace.ds2os.service.domain.RegularNode : locationValue
+  pt.ulisboa.tecnico.surespace.ds2os.service.view.SoundAdaptationServiceView -up-|> pt.ulisboa.tecnico.surespace.ds2os.service.view.AdaptationServiceView
+  pt.ulisboa.tecnico.surespace.ds2os.service.view.SoundAdaptationServiceView o-- pt.ulisboa.tecnico.surespace.common.signal.property.Amplitude : amplitude
+  pt.ulisboa.tecnico.surespace.ds2os.service.view.SoundAdaptationServiceView o-- pt.ulisboa.tecnico.surespace.common.proof.Witness : witness
+  pt.ulisboa.tecnico.surespace.ds2os.service.view.SoundAdaptationServiceView o-- pt.ulisboa.tecnico.surespace.ds2os.service.domain.RegularNode : witnessAmplitudeSamplingRateValue
+  pt.ulisboa.tecnico.surespace.ds2os.service.view.SoundAdaptationServiceView o-- pt.ulisboa.tecnico.surespace.ds2os.service.domain.RegularNode : witnessAmplitudeValue
+  pt.ulisboa.tecnico.surespace.ds2os.service.view.SoundAdaptationServiceView o-- pt.ulisboa.tecnico.surespace.ds2os.service.domain.RegularNode : witnessIsOn
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

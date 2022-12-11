@@ -1,0 +1,15 @@
+kor.archive.enabled=1
+kor.archive.limit=10
+kor.db.persist=0
+kor.db.username=ds2os
+kor.db.password=thisMustBeSecure
+kor.db.location=hsqldb/db
+kor.db.type=hsqldb
+ds2os.charset=UTF-8
+#multicastTransport.tlsString=TLS_PSK_WITH_AES_128_CBC_SHA384
+kor.db.maxValueLength=16M
+modelRepository.isSLMR=1
+modelRepository.localPath=models
+modelRepository.cmrUrl=https://gitlab.dev.ds2os.org/ds2os-devs/vsl_models/raw/master/models
+transport.interfaces=*
+transport.allowLoopback=1

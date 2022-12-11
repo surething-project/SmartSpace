@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (C) 2020 The SureThing project
+  ~ @author João Tiago <joao.marques.tiago@tecnico.ulisboa.pt>
+  ~ http://surething.tecnico.ulisboa.pt/en/
+  -->
+
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>long_term_ca</artifactId>
+        <groupId>pt.ulisboa.tecnico.surespace</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>pt.ulisboa.tecnico.surespace.long_term_ca</groupId>
+    <artifactId>long_term_ca-client</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>pt.ulisboa.tecnico.surespace.long_term_ca</groupId>
+            <artifactId>long_term_ca-contract</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+</project>

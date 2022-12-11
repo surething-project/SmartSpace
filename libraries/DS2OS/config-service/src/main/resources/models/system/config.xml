@@ -1,0 +1,104 @@
+<model type="/basic/composed" writer="" reader="">
+    <kor type="/basic/composed" writer="" reader="">
+        <archive type="/basic/composed" writer="" reader="">
+            <enabled type="/derived/boolean" writer="" reader="">1
+            </enabled>
+            <limit type="/basic/number"
+                restriction="minimumValue='1'" writer="" reader="">10
+            </limit>
+        </archive>
+        <locking type="/basic/composed" writer="" reader="">
+            <lockExpirationTime type="/basic/number"
+                restriction="minimumValue='1'" writer="" reader="">60
+            </lockExpirationTime>
+            <lockExpirationWarningTime
+                type="/basic/number" restriction="minimumValue='0'"
+                writer="" reader="">5
+            </lockExpirationWarningTime>
+        </locking>
+    </kor>
+    <modelRepository type="/basic/composed" writer=""
+        reader="">
+        <localPath type="/basic/text" writer="" reader="">models
+        </localPath>
+        <cmrUrl type="/basic/text" writer="" reader=""></cmrUrl>
+    </modelRepository>
+    <statistics type="/basic/composed" writer="" reader="">
+        <limitDatapoints type="/basic/number"
+            restriction="minimumValue='1'" writer="" reader="">500
+        </limitDatapoints>
+    </statistics>
+    <korSync type="/basic/composed" writer="" reader="">
+        <updateCacheTimeout type="/basic/number"
+            restriction="minimumValue='0'" writer="" reader="">60000
+        </updateCacheTimeout>
+        <agentRegistryCleanerInterval
+            type="/basic/number" restriction="minimumValue='1000'"
+            writer="" reader="">30000
+        </agentRegistryCleanerInterval>
+        <agentRegistryStalenessTime
+            type="/basic/number" restriction="minimumValue='0'"
+            writer="" reader="">60000
+        </agentRegistryStalenessTime>
+    </korSync>
+    <cache type="/basic/composed" writer="" reader="">
+        <enabled type="/derived/boolean" writer="" reader="">0
+        </enabled>
+        <replacementPolicy type="/basic/text"
+            writer="" reader="">rr</replacementPolicy>
+        <capacity type="/basic/number"
+            restriction="minimumValue='0'" writer="" reader="">100
+        </capacity>
+        <defaultTTL type="/basic/number"
+            restriction="minimumValue='0'" writer="" reader="">60
+        </defaultTTL>
+    </cache>
+    <ds2os type="/basic/composed" writer="" reader="">
+        <charset type="/basic/text" writer="" reader=""
+            restriction="regularExpression='^UTF-8$'">UTF-8</charset>
+    </ds2os>
+    <alivePing type="/basic/composed" writer="" reader="">
+        <senderIntervall type="/basic/number"
+            restriction="minimumValue='0'" writer="" reader="">2
+        </senderIntervall>
+    </alivePing>
+    <multicastTransport type="/basic/composed"
+        writer="" reader="">
+        <maxSenders type="/basic/number" writer="" reader="">100
+        </maxSenders>
+        <maxAuthorizedBufferSize
+            type="/basic/number" writer="" reader="">50000000
+        </maxAuthorizedBufferSize>
+        <maxUnauthorizedBufferSize
+            type="/basic/number" writer="" reader="">10000
+        </maxUnauthorizedBufferSize>
+        <tlsString type="/basic/text" writer="" reader="">TLS_PSK_WITH_AES_256_CBC_SHA384
+        </tlsString>
+        <bufferStaleInterval type="/basic/number"
+            writer="" reader="">10000
+        </bufferStaleInterval>
+    </multicastTransport>
+    <transport type="/basic/composed" writer="" reader="">
+        <allowLoopback type="/derived/boolean" writer=""
+            reader="">
+            0
+        </allowLoopback>
+        <callbackTimeout type="/basic/number" writer=""
+            reader="" restriction="minimumValue='5'">30000</callbackTimeout>
+        <rest type="/basic/composed" writer="" reader="">
+            <port type="/basic/number" writer="" reader=""
+                restriction="minimumValue='1',maximumValue='65535'">8080</port>
+            <contentTypePreference
+                type="/basic/text" writer="" reader="">application/json,application/cbor
+            </contentTypePreference>
+        </rest>
+    </transport>
+    <security type="/basic/composed" writer="" reader="">
+        <sphinx type="/basic/composed" writer="" reader="">
+            <enabled type="/derived/boolean" writer="" reader="">0
+            </enabled>
+            <blockOnAnomaly type="/derived/boolean" writer="" reader="">0
+            </blockOnAnomaly>
+        </sphinx>
+    </security>
+</model>

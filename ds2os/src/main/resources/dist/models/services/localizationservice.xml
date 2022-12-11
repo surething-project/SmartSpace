@@ -1,0 +1,3 @@
+<model type="/basic/composed">
+    <location type="/complex/location" writer=""/>
+</model>

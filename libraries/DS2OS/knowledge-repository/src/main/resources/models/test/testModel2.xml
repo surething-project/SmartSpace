@@ -1,0 +1,5 @@
+<model type="/basic/composed">
+    <text1 type="/basic/text" />
+    <text2 type="/basic/text">text2</text2>
+    <number type="/basic/number" />
+</model>

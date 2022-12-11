@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (C) 2020 The SureThing project
+  ~ @author João Tiago <joao.marques.tiago@tecnico.ulisboa.pt>
+  ~ http://surething.tecnico.ulisboa.pt/en/
+  -->
+
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>orchestrator</artifactId>
+        <groupId>pt.ulisboa.tecnico.surespace</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>pt.ulisboa.tecnico.surespace.orchestrator</groupId>
+    <artifactId>orchestrator-server</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <java.mainClass>pt.ulisboa.tecnico.surespace.orchestrator.OrchestratorApp</java.mainClass>
+        <orchestrator.host>${host}</orchestrator.host>
+        <orchestrator.port>9090</orchestrator.port>
+        <orchestrator.id>1</orchestrator.id>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>pt.ulisboa.tecnico.surespace.orchestrator</groupId>
+            <artifactId>orchestrator-contract</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>pt.ulisboa.tecnico.surespace.long_term_ca</groupId>
+            <artifactId>long_term_ca-client</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>pt.ulisboa.tecnico.surespace.ds2os</groupId>
+            <artifactId>orchestration-service</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>pt.ulisboa.tecnico.surespace.verifier</groupId>
+            <artifactId>verifier-client</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <configuration>
+                    <mainClass>${java.mainClass}</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,6 @@
+<model type="/basic/list" reader="" writer="">
+    <elements type="/basic/text" reader="" writer="" />
+    <del type="/basic/text" reader="" writer="" />
+    <add type="/basic/text" reader="" writer="" />
+</model>
+

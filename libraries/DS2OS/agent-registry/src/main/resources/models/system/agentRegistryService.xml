@@ -1,0 +1,15 @@
+<agentRegistryService type="/basic/composed"
+    reader="" writer="">
+    <connectedKAs type="/system/agentRegistryList"
+        restrictions="allowedTypes='/system/agentRecord'" reader=""
+        writer=""></connectedKAs>
+    <unconnectedKAs type="/system/agentRegistryList"
+        reader="" writer="" restrictions="allowedTypes='/system/agentRecord'"></unconnectedKAs>
+    <currentMulticastGroupKey type="/basic/text"
+        reader="" writer=""></currentMulticastGroupKey>
+    <multicastGroupKeys type="/system/agentRegistryList"
+        reader="" writer="" restrictions="allowedTypes='/system/groupKey'"></multicastGroupKeys>
+    <isLeader type="/derived/boolean" reader="" writer="">1
+    </isLeader>
+    <newGroupKey type="/basic/text" reader="" writer="system/korSync"></newGroupKey>
+</agentRegistryService>

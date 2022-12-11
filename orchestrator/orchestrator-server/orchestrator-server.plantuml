@@ -1,0 +1,112 @@
+@startuml
+
+title __ORCHESTRATOR-SERVER's Class Diagram__\n
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator {
+    class pt.ulisboa.tecnico.surespace.orchestrator.OrchestratorApp {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator {
+    class pt.ulisboa.tecnico.surespace.orchestrator.OrchestratorServiceImpl {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator {
+    namespace domain {
+      class pt.ulisboa.tecnico.surespace.orchestrator.domain.Orchestrator {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator {
+    namespace domain {
+      class pt.ulisboa.tecnico.surespace.orchestrator.domain.OrchestratorDatabase {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator {
+    namespace domain {
+      namespace exception {
+        class pt.ulisboa.tecnico.surespace.orchestrator.domain.exception.OrchestratorException {
+        }
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator {
+    namespace location {
+      class pt.ulisboa.tecnico.surespace.orchestrator.location.LocationOLCConverter {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator {
+    namespace manager {
+      class pt.ulisboa.tecnico.surespace.orchestrator.manager.OrchestratorKeyStoreManager {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator {
+    namespace manager {
+      class pt.ulisboa.tecnico.surespace.orchestrator.manager.OrchestratorLogManager {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator {
+    namespace manager {
+      class pt.ulisboa.tecnico.surespace.orchestrator.manager.OrchestratorManager {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator {
+    namespace manager {
+      class pt.ulisboa.tecnico.surespace.orchestrator.manager.OrchestratorPropertyManager {
+      }
+    }
+  }
+  
+
+  pt.ulisboa.tecnico.surespace.orchestrator.OrchestratorServiceImpl -up-|> pt.ulisboa.tecnico.surespace.orchestrator.grpc.OrchestratorServiceGrpc.OrchestratorServiceImplBase
+  pt.ulisboa.tecnico.surespace.orchestrator.OrchestratorServiceImpl o-- pt.ulisboa.tecnico.surespace.orchestrator.domain.Orchestrator : orchestrator
+  pt.ulisboa.tecnico.surespace.orchestrator.domain.Orchestrator .up.|> java.lang.AutoCloseable
+  pt.ulisboa.tecnico.surespace.orchestrator.domain.Orchestrator o-- pt.ulisboa.tecnico.surespace.orchestrator.manager.OrchestratorManager : manager
+  pt.ulisboa.tecnico.surespace.orchestrator.domain.Orchestrator o-- pt.ulisboa.tecnico.surespace.orchestrator.domain.OrchestratorDatabase : database
+  pt.ulisboa.tecnico.surespace.orchestrator.domain.Orchestrator o-- pt.ulisboa.tecnico.surespace.ds2os.service.OrchestrationService : orchestrationService
+  pt.ulisboa.tecnico.surespace.orchestrator.domain.exception.OrchestratorException -up-|> pt.ulisboa.tecnico.surespace.common.exception.BroadException
+  pt.ulisboa.tecnico.surespace.orchestrator.location.LocationOLCConverter .up.|> pt.ulisboa.tecnico.surespace.common.location.LocationConverter
+  pt.ulisboa.tecnico.surespace.orchestrator.manager.OrchestratorKeyStoreManager -up-|> pt.ulisboa.tecnico.surespace.common.manager.KeyStoreManager
+  pt.ulisboa.tecnico.surespace.orchestrator.manager.OrchestratorKeyStoreManager o-- pt.ulisboa.tecnico.surespace.orchestrator.manager.OrchestratorManager : manager
+  pt.ulisboa.tecnico.surespace.orchestrator.manager.OrchestratorLogManager -up-|> pt.ulisboa.tecnico.surespace.common.manager.LogManager
+  pt.ulisboa.tecnico.surespace.orchestrator.manager.OrchestratorManager .up.|> pt.ulisboa.tecnico.surespace.common.manager.GlobalManagerInterface
+  pt.ulisboa.tecnico.surespace.orchestrator.manager.OrchestratorManager o-- pt.ulisboa.tecnico.surespace.common.manager.EntityManager : entityManager
+  pt.ulisboa.tecnico.surespace.orchestrator.manager.OrchestratorManager o-- pt.ulisboa.tecnico.surespace.orchestrator.manager.OrchestratorKeyStoreManager : keyStoreManager
+  pt.ulisboa.tecnico.surespace.orchestrator.manager.OrchestratorManager o-- pt.ulisboa.tecnico.surespace.orchestrator.manager.OrchestratorLogManager : logManager
+  pt.ulisboa.tecnico.surespace.orchestrator.manager.OrchestratorManager o-- pt.ulisboa.tecnico.surespace.common.manager.NonceManager : nonceManager
+  pt.ulisboa.tecnico.surespace.orchestrator.manager.OrchestratorManager o-- pt.ulisboa.tecnico.surespace.orchestrator.manager.OrchestratorPropertyManager : propertyManager
+  pt.ulisboa.tecnico.surespace.orchestrator.manager.OrchestratorManager o-- pt.ulisboa.tecnico.surespace.common.domain.Entity : verifier
+  pt.ulisboa.tecnico.surespace.orchestrator.manager.OrchestratorManager o-- pt.ulisboa.tecnico.surespace.verifier.client.VerifierClient : verifierClient
+  pt.ulisboa.tecnico.surespace.orchestrator.manager.OrchestratorPropertyManager -up-|> pt.ulisboa.tecnico.surespace.common.manager.PropertyManager
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -1,0 +1,112 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.ds2os.vsl</groupId>
+		<artifactId>parent</artifactId>
+		<version>1.0</version>
+		<relativePath>../parent</relativePath>
+	</parent>
+	<artifactId>coap-transport</artifactId>
+	<version>0.1</version>
+	<name>CoAP protocol implementation of the REST transport module</name>
+	<description>Transport module for a RESTful transport with the CoAP protocol.</description>
+
+	<properties>
+		<targetJdk>1.7</targetJdk>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.ds2os.vsl</groupId>
+			<artifactId>core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.ds2os.vsl</groupId>
+			<artifactId>net-utils</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.ds2os.vsl</groupId>
+			<artifactId>rest-transport</artifactId>
+			<version>0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.ds2os.vsl</groupId>
+			<artifactId>coap-connector</artifactId>
+			<version>0.1</version>
+		</dependency>
+		<!-- for fake KA -->
+		<dependency>
+			<groupId>org.ds2os.vsl</groupId>
+			<artifactId>test-data</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<!-- for fake KA -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+		</dependency>
+		<!-- for fake KA -->
+		<dependency>
+			<groupId>org.ds2os.vsl</groupId>
+			<artifactId>databind-mapper</artifactId>
+		</dependency>
+		<!-- for fake KA -->
+		<dependency>
+			<groupId>org.ds2os.vsl</groupId>
+			<artifactId>databind-mapper-xml</artifactId>
+		</dependency>
+		<!-- for fake KA -->
+		<dependency>
+			<groupId>org.ds2os.vsl</groupId>
+			<artifactId>databind-mapper-cbor</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<!-- for fake KA -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>org.ds2os.vsl.rest.californium.CaliforniumFakeKA</mainClass>
+							<packageName>org.ds2os.vsl.rest.californium</packageName>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<configuration>
+					<finalName>${project.artifactId}</finalName>
+					<transformers>
+						<transformer
+							implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+							<mainClass>org.ds2os.vsl.rest.californium.CaliforniumFakeKA</mainClass>
+						</transformer>
+					</transformers>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

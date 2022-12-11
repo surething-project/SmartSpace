@@ -1,0 +1,110 @@
+@startuml
+
+title __MESSAGE's Class Diagram__\n
+
+  namespace pt.ulisboa.tecnico.surespace.long_term_ca.common.message {
+    class pt.ulisboa.tecnico.surespace.long_term_ca.common.message.SignedRegisterEntityRequest {
+        {static} - serialVersionUID : long
+        + clone()
+        {static} + newBuilder()
+        - SignedRegisterEntityRequest()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.long_term_ca.common.message {
+    class pt.ulisboa.tecnico.surespace.long_term_ca.common.message.SignedRegisterEntityRequest.RegisterEntityRequest {
+        - csr : byte[]
+        {static} - serialVersionUID : long
+        + clone()
+        + equals()
+        + getCsr()
+        + hashCode()
+        {static} + newBuilder()
+        + toString()
+        - RegisterEntityRequest()
+        - setCsr()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.long_term_ca.common.message {
+    class pt.ulisboa.tecnico.surespace.long_term_ca.common.message.SignedRegisterEntityRequest.RegisterEntityRequest.RegisterEntityRequestBuilder {
+        + RegisterEntityRequestBuilder()
+        + setCsr()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.long_term_ca.common.message {
+    class pt.ulisboa.tecnico.surespace.long_term_ca.common.message.SignedRegisterEntityRequest.SignedRegisterEntityRequestBuilder {
+        + SignedRegisterEntityRequestBuilder()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.long_term_ca.common.message {
+    class pt.ulisboa.tecnico.surespace.long_term_ca.common.message.SignedRegisterEntityResponse {
+        {static} - serialVersionUID : long
+        + clone()
+        {static} + newBuilder()
+        - SignedRegisterEntityResponse()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.long_term_ca.common.message {
+    class pt.ulisboa.tecnico.surespace.long_term_ca.common.message.SignedRegisterEntityResponse.RegisterEntityResponse {
+        - certificateBytesChain : byte[][]
+        {static} - serialVersionUID : long
+        + clone()
+        + equals()
+        + getCertificateBytesChain()
+        + hashCode()
+        {static} + newBuilder()
+        + setCertificateBytesChain()
+        + toString()
+        - RegisterEntityResponse()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.long_term_ca.common.message {
+    class pt.ulisboa.tecnico.surespace.long_term_ca.common.message.SignedRegisterEntityResponse.RegisterEntityResponse.RegisterEntityResponseBuilder {
+        + RegisterEntityResponseBuilder()
+        + setCertificateBytesChain()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.long_term_ca.common.message {
+    class pt.ulisboa.tecnico.surespace.long_term_ca.common.message.SignedRegisterEntityResponse.SignedRegisterEntityResponseBuilder {
+        + SignedRegisterEntityResponseBuilder()
+    }
+  }
+  
+
+  pt.ulisboa.tecnico.surespace.long_term_ca.common.message.SignedRegisterEntityRequest -up-|> pt.ulisboa.tecnico.surespace.common.message.SignedMessage
+  pt.ulisboa.tecnico.surespace.long_term_ca.common.message.SignedRegisterEntityRequest +-down- pt.ulisboa.tecnico.surespace.long_term_ca.common.message.SignedRegisterEntityRequest.RegisterEntityRequest
+  pt.ulisboa.tecnico.surespace.long_term_ca.common.message.SignedRegisterEntityRequest +-down- pt.ulisboa.tecnico.surespace.long_term_ca.common.message.SignedRegisterEntityRequest.SignedRegisterEntityRequestBuilder
+  pt.ulisboa.tecnico.surespace.long_term_ca.common.message.SignedRegisterEntityRequest.RegisterEntityRequest -up-|> pt.ulisboa.tecnico.surespace.common.message.Message
+  pt.ulisboa.tecnico.surespace.long_term_ca.common.message.SignedRegisterEntityRequest.RegisterEntityRequest +-down- pt.ulisboa.tecnico.surespace.long_term_ca.common.message.SignedRegisterEntityRequest.RegisterEntityRequest.RegisterEntityRequestBuilder
+  pt.ulisboa.tecnico.surespace.long_term_ca.common.message.SignedRegisterEntityRequest.RegisterEntityRequest.RegisterEntityRequestBuilder -up-|> pt.ulisboa.tecnico.surespace.common.message.Message.MessageBuilder
+  pt.ulisboa.tecnico.surespace.long_term_ca.common.message.SignedRegisterEntityRequest.SignedRegisterEntityRequestBuilder -up-|> pt.ulisboa.tecnico.surespace.common.message.SignedMessage.SignedMessageBuilder
+  pt.ulisboa.tecnico.surespace.long_term_ca.common.message.SignedRegisterEntityResponse -up-|> pt.ulisboa.tecnico.surespace.common.message.SignedMessage
+  pt.ulisboa.tecnico.surespace.long_term_ca.common.message.SignedRegisterEntityResponse +-down- pt.ulisboa.tecnico.surespace.long_term_ca.common.message.SignedRegisterEntityResponse.RegisterEntityResponse
+  pt.ulisboa.tecnico.surespace.long_term_ca.common.message.SignedRegisterEntityResponse +-down- pt.ulisboa.tecnico.surespace.long_term_ca.common.message.SignedRegisterEntityResponse.SignedRegisterEntityResponseBuilder
+  pt.ulisboa.tecnico.surespace.long_term_ca.common.message.SignedRegisterEntityResponse.RegisterEntityResponse -up-|> pt.ulisboa.tecnico.surespace.common.message.Message
+  pt.ulisboa.tecnico.surespace.long_term_ca.common.message.SignedRegisterEntityResponse.RegisterEntityResponse +-down- pt.ulisboa.tecnico.surespace.long_term_ca.common.message.SignedRegisterEntityResponse.RegisterEntityResponse.RegisterEntityResponseBuilder
+  pt.ulisboa.tecnico.surespace.long_term_ca.common.message.SignedRegisterEntityResponse.RegisterEntityResponse.RegisterEntityResponseBuilder -up-|> pt.ulisboa.tecnico.surespace.common.message.Message.MessageBuilder
+  pt.ulisboa.tecnico.surespace.long_term_ca.common.message.SignedRegisterEntityResponse.SignedRegisterEntityResponseBuilder -up-|> pt.ulisboa.tecnico.surespace.common.message.SignedMessage.SignedMessageBuilder
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

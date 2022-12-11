@@ -1,0 +1,15 @@
+#!/bin/sh
+mydir="$( dirname "$0" )"
+wget -P "$mydir" -r -l1 -nH --cut-dirs=2 --no-parent --reject="index.html*" http://dev.ds2os.org/certificates/jan2018/
+
+# copy to all needed destinations
+cp "$mydir/agent1.jks" "$mydir/../certificate-authority/"
+cp "$mydir/service1.jks" "$mydir/../certificate-authority/"
+cp "$mydir/agent1.jks" "$mydir/../java7-ka/"
+cp "$mydir/agent2.jks" "$mydir/../java7-ka/"
+cp "$mydir/agent3.jks" "$mydir/../java7-ka/"
+cp "$mydir/agent1.jks" "$mydir/../java8-ka/"
+cp "$mydir/agent2.jks" "$mydir/../java8-ka/"
+cp "$mydir/agent3.jks" "$mydir/../java8-ka/"
+cp "$mydir/agent1.jks" "$mydir/../rest-transport/"
+cp "$mydir/system.jks" "$mydir/../rest-connector/"

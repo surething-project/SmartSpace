@@ -1,0 +1,144 @@
+@startuml
+
+title __VERIFIER-SERVER's Class Diagram__\n
+
+  namespace pt.ulisboa.tecnico.surespace.verifier {
+    class pt.ulisboa.tecnico.surespace.verifier.VerifierApp {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.verifier {
+    class pt.ulisboa.tecnico.surespace.verifier.VerifierServiceImpl {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.verifier {
+    namespace domain {
+      class pt.ulisboa.tecnico.surespace.verifier.domain.Verifier {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.verifier {
+    namespace domain {
+      namespace exception {
+        class pt.ulisboa.tecnico.surespace.verifier.domain.exception.VerifierException {
+        }
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.verifier {
+    namespace manager {
+      class pt.ulisboa.tecnico.surespace.verifier.manager.VerifierKeyStoreManager {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.verifier {
+    namespace manager {
+      class pt.ulisboa.tecnico.surespace.verifier.manager.VerifierLogManager {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.verifier {
+    namespace manager {
+      class pt.ulisboa.tecnico.surespace.verifier.manager.VerifierManager {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.verifier {
+    namespace manager {
+      class pt.ulisboa.tecnico.surespace.verifier.manager.VerifierPropertyManager {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.verifier {
+    namespace matlab {
+      class pt.ulisboa.tecnico.surespace.verifier.matlab.LocationProofView {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.verifier {
+    namespace matlab {
+      class pt.ulisboa.tecnico.surespace.verifier.matlab.SignalProcessing {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.verifier {
+    namespace matlab {
+      class pt.ulisboa.tecnico.surespace.verifier.matlab.Wrapper {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.verifier {
+    namespace matlab {
+      namespace exception {
+        class pt.ulisboa.tecnico.surespace.verifier.matlab.exception.SignalProcessingException {
+        }
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.verifier {
+    namespace matlab {
+      namespace exception {
+        class pt.ulisboa.tecnico.surespace.verifier.matlab.exception.WrapperException {
+        }
+      }
+    }
+  }
+  
+
+  pt.ulisboa.tecnico.surespace.verifier.VerifierServiceImpl -up-|> pt.ulisboa.tecnico.surespace.verifier.grpc.VerifierServiceGrpc.VerifierServiceImplBase
+  pt.ulisboa.tecnico.surespace.verifier.VerifierServiceImpl o-- pt.ulisboa.tecnico.surespace.verifier.domain.Verifier : verifier
+  pt.ulisboa.tecnico.surespace.verifier.domain.Verifier .up.|> java.lang.AutoCloseable
+  pt.ulisboa.tecnico.surespace.verifier.domain.Verifier o-- pt.ulisboa.tecnico.surespace.verifier.manager.VerifierManager : manager
+  pt.ulisboa.tecnico.surespace.verifier.domain.Verifier o-- pt.ulisboa.tecnico.surespace.verifier.matlab.Wrapper : matlab
+  pt.ulisboa.tecnico.surespace.verifier.domain.exception.VerifierException -up-|> pt.ulisboa.tecnico.surespace.common.exception.BroadException
+  pt.ulisboa.tecnico.surespace.verifier.manager.VerifierKeyStoreManager -up-|> pt.ulisboa.tecnico.surespace.common.manager.KeyStoreManager
+  pt.ulisboa.tecnico.surespace.verifier.manager.VerifierKeyStoreManager o-- pt.ulisboa.tecnico.surespace.verifier.manager.VerifierManager : manager
+  pt.ulisboa.tecnico.surespace.verifier.manager.VerifierLogManager -up-|> pt.ulisboa.tecnico.surespace.common.manager.LogManager
+  pt.ulisboa.tecnico.surespace.verifier.manager.VerifierManager .up.|> pt.ulisboa.tecnico.surespace.common.manager.GlobalManagerInterface
+  pt.ulisboa.tecnico.surespace.verifier.manager.VerifierManager o-- pt.ulisboa.tecnico.surespace.common.manager.EntityManager : entityManager
+  pt.ulisboa.tecnico.surespace.verifier.manager.VerifierManager o-- pt.ulisboa.tecnico.surespace.verifier.manager.VerifierKeyStoreManager : keyStoreManager
+  pt.ulisboa.tecnico.surespace.verifier.manager.VerifierManager o-- pt.ulisboa.tecnico.surespace.verifier.manager.VerifierLogManager : logManager
+  pt.ulisboa.tecnico.surespace.verifier.manager.VerifierManager o-- pt.ulisboa.tecnico.surespace.common.manager.NonceManager : nonceManager
+  pt.ulisboa.tecnico.surespace.verifier.manager.VerifierManager o-- pt.ulisboa.tecnico.surespace.common.domain.Entity : orchestrator
+  pt.ulisboa.tecnico.surespace.verifier.manager.VerifierManager o-- pt.ulisboa.tecnico.surespace.orchestrator.client.OrchestratorClient : orchestratorClient
+  pt.ulisboa.tecnico.surespace.verifier.manager.VerifierManager o-- pt.ulisboa.tecnico.surespace.verifier.manager.VerifierPropertyManager : propertyManager
+  pt.ulisboa.tecnico.surespace.verifier.manager.VerifierPropertyManager -up-|> pt.ulisboa.tecnico.surespace.common.manager.PropertyManager
+  pt.ulisboa.tecnico.surespace.verifier.matlab.LocationProofView o-- pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationResponse : authorization
+  pt.ulisboa.tecnico.surespace.verifier.matlab.Wrapper .up.|> java.lang.AutoCloseable
+  pt.ulisboa.tecnico.surespace.verifier.matlab.Wrapper o-- pt.ulisboa.tecnico.surespace.verifier.matlab.LocationProofView : proofView
+  pt.ulisboa.tecnico.surespace.verifier.matlab.Wrapper o-- pt.ulisboa.tecnico.surespace.verifier.matlab.SignalProcessing : signalProcessing
+  pt.ulisboa.tecnico.surespace.verifier.matlab.exception.SignalProcessingException -up-|> pt.ulisboa.tecnico.surespace.verifier.matlab.exception.WrapperException
+  pt.ulisboa.tecnico.surespace.verifier.matlab.exception.WrapperException -up-|> pt.ulisboa.tecnico.surespace.common.exception.BroadException
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

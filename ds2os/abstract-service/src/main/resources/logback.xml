@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (C) 2020 The SureThing project
+  ~ @author João Tiago <joao.marques.tiago@tecnico.ulisboa.pt>
+  ~ http://surething.tecnico.ulisboa.pt/en/
+  -->
+
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <!-- Jetty is a real spammer on DEBUG -->
+    <logger name="org.eclipse.jetty" level="WARN"/>
+
+    <!-- reduce DEBUG logging of alive ping related stuff -->
+    <logger name="org.ds2os.vsl.agentregistry" level="WARN"/>
+    <logger name="org.ds2os.vsl.aliveping" level="WARN"/>
+    <logger name="org.ds2os.vsl.multicasttransport" level="WARN"/>
+
+    <!-- root logging to STDOUT on DEBUG level -->
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>

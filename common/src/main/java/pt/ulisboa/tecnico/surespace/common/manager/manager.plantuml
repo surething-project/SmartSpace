@@ -1,0 +1,319 @@
+@startuml
+
+title __MANAGER's Class Diagram__\n
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    class pt.ulisboa.tecnico.surespace.common.manager.EntityManager {
+        - entities : ConcurrentHashMap<String, Entity>
+        + EntityManager()
+        + afterLoading()
+        + beforeLoading()
+        + current()
+        + current()
+        + forget()
+        + getByPath()
+        + knows()
+        + list()
+        + register()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    interface pt.ulisboa.tecnico.surespace.common.manager.EntityManagerInterface {
+        {abstract} + current()
+        {abstract} + current()
+        {abstract} + forget()
+        {abstract} + getByPath()
+        {abstract} + knows()
+        {abstract} + list()
+        {abstract} + register()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    interface pt.ulisboa.tecnico.surespace.common.manager.GlobalManagerInterface {
+        {abstract} + entity()
+        {abstract} + keyStore()
+        {abstract} + log()
+        {abstract} + nonce()
+        {abstract} + property()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    abstract class pt.ulisboa.tecnico.surespace.common.manager.KeyStoreManager {
+        # keyStore : KeyStore
+        {static} - KEY_ENTRY_PREFIX : String
+        - certDigAlgId : String
+        - certSigAlgId : String
+        - certSigAlgKeySize : int
+        - certificateFactory : CertificateFactory
+        - certs : ConcurrentHashMap<String, CertificateEntity>
+        - keyStorePassword : char[]
+        + afterLoading()
+        + bytesFromCertificate()
+        + bytesFromCertificateChain()
+        + certificateChainFromBytes()
+        + certificateFromBytes()
+        + containsCertificate()
+        + containsKey()
+        + exportCertificateChain()
+        + exportPrivateKey()
+        + generateCsr()
+        + getCertificate()
+        + getCertificateChain()
+        + getPrivateKey()
+        + isCorrectlySigned()
+        + isCorrectlySigned()
+        + isCorrectlySignedWithPublicKey()
+        + isCorrectlySignedWithPublicKey()
+        + isValidCertificate()
+        + removeCertificateEntry()
+        + removeKeyEntry()
+        + setCertificateEntry()
+        + setKeyEntry()
+        + signData()
+        + signData()
+        + signDataWithPublicKey()
+        + signDataWithPublicKey()
+        # KeyStoreManager()
+        # contains()
+        # contains()
+        # containsCertificate()
+        # containsCertificate()
+        # containsKey()
+        # containsKey()
+        # generateKeyPair()
+        # getCACertificateEntityByName()
+        # getCertDigAlgId()
+        # getCertSigAlgId()
+        # getCertificate()
+        # getCertificate()
+        # getCertificateChain()
+        # getCertificateChain()
+        # getKeyStorePassword()
+        # getPrivateKey()
+        # getPrivateKey()
+        # getPropertyByCA()
+        # getStringPropertyByCA()
+        # getX500NameByCA()
+        {abstract} # keyStoreInputStream()
+        {abstract} # keyStoreOutputStream()
+        # load()
+        # load()
+        # setCertificateEntry()
+        # setCertificateEntry()
+        # setCertificateEntry()
+        # setCertificateEntry()
+        # setCertificateEntry()
+        # setKeyEntry()
+        # setKeyEntry()
+        # setKeyEntry()
+        # setKeyEntry()
+        # store()
+        # store()
+        # updateKeyStorePassword()
+        - getCACertificateEntity()
+        - isCorrectlySigned()
+        - populateCertificateEntities()
+        - putCertificateEntity()
+        - removeCertificateEntry()
+        - removeEntry()
+        - removeKeyEntry()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    class pt.ulisboa.tecnico.surespace.common.manager.KeyStoreManager.CertificateEntity {
+        - alias : String
+        - name : String
+        - privateKey : PrivateKey
+        - x500Name : X500Name
+        + CertificateEntity()
+        + equals()
+        + getAlias()
+        + getName()
+        + getPrivateKey()
+        + getX500Name()
+        + hashCode()
+        + setAlias()
+        + setName()
+        + setPrivateKey()
+        + setX500Name()
+        + toString()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    class pt.ulisboa.tecnico.surespace.common.manager.KeyStoreManager.CertificateProperties {
+        - extensions : HashSet<Extension>
+        - validity : int
+        + addExtension()
+        + equals()
+        + getExtensions()
+        + getIssuer()
+        + getSubject()
+        + getValidity()
+        + hashCode()
+        + setIssuer()
+        + setSubject()
+        + setValidity()
+        + toString()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    interface pt.ulisboa.tecnico.surespace.common.manager.KeyStoreManagerInterface {
+        {abstract} + bytesFromCertificate()
+        {abstract} + bytesFromCertificateChain()
+        {abstract} + certificateChainFromBytes()
+        {abstract} + certificateFromBytes()
+        {abstract} + containsCertificate()
+        {abstract} + containsKey()
+        {abstract} + exportCertificateChain()
+        {abstract} + exportPrivateKey()
+        {abstract} + generateCsr()
+        {abstract} + getCertificate()
+        {abstract} + getCertificateChain()
+        {abstract} + getPrivateKey()
+        {abstract} + isCorrectlySigned()
+        {abstract} + isCorrectlySigned()
+        {abstract} + isCorrectlySignedWithPublicKey()
+        {abstract} + isCorrectlySignedWithPublicKey()
+        {abstract} + isValidCertificate()
+        {abstract} + removeCertificateEntry()
+        {abstract} + removeKeyEntry()
+        {abstract} + setCertificateEntry()
+        {abstract} + setKeyEntry()
+        {abstract} + signData()
+        {abstract} + signData()
+        {abstract} + signDataWithPublicKey()
+        {abstract} + signDataWithPublicKey()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    abstract class pt.ulisboa.tecnico.surespace.common.manager.LogManager {
+        + LogManager()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    interface pt.ulisboa.tecnico.surespace.common.manager.LogManagerInterface {
+        {abstract} + debug()
+        + debug()
+        {abstract} + error()
+        + error()
+        + getFormattedString()
+        {abstract} + info()
+        + info()
+        {abstract} + warning()
+        + warning()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    interface pt.ulisboa.tecnico.surespace.common.manager.ManagerInterface {
+        + afterLoading()
+        + beforeLoading()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    class pt.ulisboa.tecnico.surespace.common.manager.NonceManager {
+        {static} - NONCES_SET_SIZE : int
+        - nonces : HashSet<Nonce>
+        + next()
+        + valid()
+        - generateRandomLong()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    interface pt.ulisboa.tecnico.surespace.common.manager.NonceManagerInterface {
+        {abstract} + next()
+        {abstract} + valid()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    class pt.ulisboa.tecnico.surespace.common.manager.PropertyManager {
+        - properties : Properties
+        + PropertyManager()
+        + beforeLoading()
+        + get()
+        + has()
+        + set()
+        + toString()
+        + unset()
+        # extend()
+        # log()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    interface pt.ulisboa.tecnico.surespace.common.manager.PropertyManagerInterface {
+        {static} + DELIMITER : String
+        + composePath()
+        {abstract} + get()
+        {abstract} + has()
+        {abstract} + set()
+        {abstract} + unset()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    class pt.ulisboa.tecnico.surespace.common.manager.PropertyManagerInterface.Property {
+        - key : String
+        - value : Object
+        + asCharArray()
+        + asFloat()
+        + asInt()
+        + asLong()
+        + asString()
+        + equals()
+        + hashCode()
+        + toString()
+        # Property()
+    }
+  }
+  
+
+  pt.ulisboa.tecnico.surespace.common.manager.EntityManager .up.|> pt.ulisboa.tecnico.surespace.common.manager.EntityManagerInterface
+  pt.ulisboa.tecnico.surespace.common.manager.EntityManager o-- pt.ulisboa.tecnico.surespace.common.domain.Entity : currentEntity
+  pt.ulisboa.tecnico.surespace.common.manager.EntityManager o-- pt.ulisboa.tecnico.surespace.common.manager.PropertyManagerInterface : propertyManager
+  pt.ulisboa.tecnico.surespace.common.manager.KeyStoreManager .up.|> pt.ulisboa.tecnico.surespace.common.manager.KeyStoreManagerInterface
+  pt.ulisboa.tecnico.surespace.common.manager.KeyStoreManager o-- pt.ulisboa.tecnico.surespace.common.manager.PropertyManagerInterface : propertyManager
+  pt.ulisboa.tecnico.surespace.common.manager.KeyStoreManager +-down- pt.ulisboa.tecnico.surespace.common.manager.KeyStoreManager.CertificateEntity
+  pt.ulisboa.tecnico.surespace.common.manager.KeyStoreManager +-down- pt.ulisboa.tecnico.surespace.common.manager.KeyStoreManager.CertificateProperties
+  pt.ulisboa.tecnico.surespace.common.manager.KeyStoreManager.CertificateProperties o-- pt.ulisboa.tecnico.surespace.common.manager.KeyStoreManager.CertificateEntity : issuer
+  pt.ulisboa.tecnico.surespace.common.manager.KeyStoreManager.CertificateProperties o-- pt.ulisboa.tecnico.surespace.common.manager.KeyStoreManager.CertificateEntity : subject
+  pt.ulisboa.tecnico.surespace.common.manager.LogManager .up.|> pt.ulisboa.tecnico.surespace.common.manager.LogManagerInterface
+  pt.ulisboa.tecnico.surespace.common.manager.NonceManager .up.|> pt.ulisboa.tecnico.surespace.common.manager.NonceManagerInterface
+  pt.ulisboa.tecnico.surespace.common.manager.PropertyManager .up.|> pt.ulisboa.tecnico.surespace.common.manager.PropertyManagerInterface
+  pt.ulisboa.tecnico.surespace.common.manager.PropertyManager o-- pt.ulisboa.tecnico.surespace.common.manager.LogManagerInterface : logManager
+  pt.ulisboa.tecnico.surespace.common.manager.PropertyManagerInterface +-down- pt.ulisboa.tecnico.surespace.common.manager.PropertyManagerInterface.Property
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

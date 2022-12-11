@@ -1,0 +1,3 @@
+<agentList type="/system/agentRegistryList" restrictions="allowedTypes='/system/agentRecord'"
+    reader="" writer="">
+</agentList>

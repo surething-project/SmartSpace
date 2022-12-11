@@ -1,0 +1,3 @@
+<model type="/basic/composed">
+    <isOn type="/basic/boolean" writer=""/>
+</model>

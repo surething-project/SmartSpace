@@ -1,0 +1,104 @@
+@startuml
+
+title __ORCHESTRATOR's Class Diagram__\n
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator {
+    class pt.ulisboa.tecnico.surespace.orchestrator.SignedRequestProofInformationRequest {
+        {static} - serialVersionUID : long
+        + clone()
+        {static} + newBuilder()
+        - SignedRequestProofInformationRequest()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator {
+    class pt.ulisboa.tecnico.surespace.orchestrator.SignedRequestProofInformationRequest.RequestProofInformationRequest {
+        - identifier : String
+        {static} - serialVersionUID : long
+        + clone()
+        + getIdentifier()
+        {static} + newBuilder()
+        - RequestProofInformationRequest()
+        - setIdentifier()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator {
+    class pt.ulisboa.tecnico.surespace.orchestrator.SignedRequestProofInformationRequest.RequestProofInformationRequest.RequestProofInformationRequestBuilder {
+        + RequestProofInformationRequestBuilder()
+        + setIdentifier()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator {
+    class pt.ulisboa.tecnico.surespace.orchestrator.SignedRequestProofInformationRequest.SignedRequestProofInformationRequestBuilder {
+        + SignedRequestProofInformationRequestBuilder()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator {
+    class pt.ulisboa.tecnico.surespace.orchestrator.SignedRequestProofInformationResponse {
+        {static} - serialVersionUID : long
+        + clone()
+        {static} + newBuilder()
+        - SignedRequestProofInformationResponse()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator {
+    class pt.ulisboa.tecnico.surespace.orchestrator.SignedRequestProofInformationResponse.RequestProofInformationResponse {
+        {static} - serialVersionUID : long
+        - signals : LinkedList<Signal>
+        + clone()
+        + getSignals()
+        {static} + newBuilder()
+        - RequestProofInformationResponse()
+        - setSignals()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator {
+    class pt.ulisboa.tecnico.surespace.orchestrator.SignedRequestProofInformationResponse.RequestProofInformationResponse.RequestProofInformationResponseBuilder {
+        + RequestProofInformationResponseBuilder()
+        + setSignals()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator {
+    class pt.ulisboa.tecnico.surespace.orchestrator.SignedRequestProofInformationResponse.SignedRequestProofInformationResponseBuilder {
+        + SignedRequestProofInformationResponseBuilder()
+    }
+  }
+  
+
+  pt.ulisboa.tecnico.surespace.orchestrator.SignedRequestProofInformationRequest -up-|> pt.ulisboa.tecnico.surespace.common.message.SignedMessage
+  pt.ulisboa.tecnico.surespace.orchestrator.SignedRequestProofInformationRequest +-down- pt.ulisboa.tecnico.surespace.orchestrator.SignedRequestProofInformationRequest.RequestProofInformationRequest
+  pt.ulisboa.tecnico.surespace.orchestrator.SignedRequestProofInformationRequest +-down- pt.ulisboa.tecnico.surespace.orchestrator.SignedRequestProofInformationRequest.SignedRequestProofInformationRequestBuilder
+  pt.ulisboa.tecnico.surespace.orchestrator.SignedRequestProofInformationRequest.RequestProofInformationRequest -up-|> pt.ulisboa.tecnico.surespace.common.message.Message
+  pt.ulisboa.tecnico.surespace.orchestrator.SignedRequestProofInformationRequest.RequestProofInformationRequest +-down- pt.ulisboa.tecnico.surespace.orchestrator.SignedRequestProofInformationRequest.RequestProofInformationRequest.RequestProofInformationRequestBuilder
+  pt.ulisboa.tecnico.surespace.orchestrator.SignedRequestProofInformationRequest.RequestProofInformationRequest.RequestProofInformationRequestBuilder -up-|> pt.ulisboa.tecnico.surespace.common.message.Message.MessageBuilder
+  pt.ulisboa.tecnico.surespace.orchestrator.SignedRequestProofInformationRequest.SignedRequestProofInformationRequestBuilder -up-|> pt.ulisboa.tecnico.surespace.common.message.SignedMessage.SignedMessageBuilder
+  pt.ulisboa.tecnico.surespace.orchestrator.SignedRequestProofInformationResponse -up-|> pt.ulisboa.tecnico.surespace.common.message.SignedMessage
+  pt.ulisboa.tecnico.surespace.orchestrator.SignedRequestProofInformationResponse +-down- pt.ulisboa.tecnico.surespace.orchestrator.SignedRequestProofInformationResponse.RequestProofInformationResponse
+  pt.ulisboa.tecnico.surespace.orchestrator.SignedRequestProofInformationResponse +-down- pt.ulisboa.tecnico.surespace.orchestrator.SignedRequestProofInformationResponse.SignedRequestProofInformationResponseBuilder
+  pt.ulisboa.tecnico.surespace.orchestrator.SignedRequestProofInformationResponse.RequestProofInformationResponse -up-|> pt.ulisboa.tecnico.surespace.common.message.Message
+  pt.ulisboa.tecnico.surespace.orchestrator.SignedRequestProofInformationResponse.RequestProofInformationResponse +-down- pt.ulisboa.tecnico.surespace.orchestrator.SignedRequestProofInformationResponse.RequestProofInformationResponse.RequestProofInformationResponseBuilder
+  pt.ulisboa.tecnico.surespace.orchestrator.SignedRequestProofInformationResponse.RequestProofInformationResponse.RequestProofInformationResponseBuilder -up-|> pt.ulisboa.tecnico.surespace.common.message.Message.MessageBuilder
+  pt.ulisboa.tecnico.surespace.orchestrator.SignedRequestProofInformationResponse.SignedRequestProofInformationResponseBuilder -up-|> pt.ulisboa.tecnico.surespace.common.message.SignedMessage.SignedMessageBuilder
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

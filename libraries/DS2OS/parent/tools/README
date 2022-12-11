@@ -1,0 +1,2 @@
+use the create-configured-keystores.sh in order to create new keystores for ds2os.
+Be aware that the new keystores are not compatible with older keystores, so be sure to adapt the file accordingly to create all certificates you need.

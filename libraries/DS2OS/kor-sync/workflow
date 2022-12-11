@@ -1,0 +1,18 @@
+smaller network initializes handshake
+-in case of equally large networks, leader with the lexicographically lower name initializes the handshake
+only the leader of a group is allowed to do the handshake
+all KAs of the other group must be known before handshaking (unconnected)
+1)  initiator sends VslHandshakeData containing all connected KAs to the other leader and waits for a response
+1.1)afterwards he continues with the retrieved VslHandshakeData response 3)
+2)  other leader receives the handshakedata
+2.1)other leader creates a new groupkey
+2.2)other leader sends back his VslHandshakeData with his connectedKAs and the new key
+2.3) afterwards he continues with 3)
+3)  handshakeupdate:
+3.1) both leaders store the new key after retrieving a copy of their old ones hash
+3.2) new key is distributed to all connected KAs
+3.3) new KAs are moved to connected
+
+4)  update process (not necessarilly part of the handshake)
+4.1)leaders collect full updates from all new KAs
+4.2)send updates to all KAs of the old network) (with the old key, why?)

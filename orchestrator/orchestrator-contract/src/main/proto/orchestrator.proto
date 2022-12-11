@@ -1,0 +1,53 @@
+// orchestrator.proto
+syntax = "proto3";
+
+option java_multiple_files = true;
+
+package pt.ulisboa.tecnico.surespace.orchestrator.grpc;
+
+//
+// Messages
+//
+
+message PingRequest {
+  bytes signedContent = 1;
+}
+
+message PingResponse {
+  bytes signedContent = 1;
+}
+
+message RequestAuthorizationRequest {
+  bytes signedContent = 1;
+}
+
+message RequestAuthorizationResponse {
+  bytes signedContent = 1;
+}
+
+message ProveLocationRequest {
+  bytes signedContent = 1;
+}
+
+message ProveLocationResponse {
+  bytes signedContent = 1;
+}
+
+message RequestProofInformationRequest {
+  bytes signedContent = 1;
+}
+
+message RequestProofInformationResponse {
+  bytes signedContent = 1;
+}
+
+//
+// Services
+//
+
+service OrchestratorService {
+  rpc Ping (PingRequest) returns (PingResponse);
+  rpc RequestAuthorization(RequestAuthorizationRequest) returns (RequestAuthorizationResponse);
+  rpc ProveLocation(ProveLocationRequest) returns (ProveLocationResponse);
+  rpc RequestProofInformation(RequestProofInformationRequest) returns (RequestProofInformationResponse);
+}

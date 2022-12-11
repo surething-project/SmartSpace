@@ -1,0 +1,4 @@
+<model type="/services/adaptationservice">
+    <beacon type="/complex/beaconLight"/>
+    <witness type="/complex/witnessLight"/>
+</model>

@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.ds2os.vsl</groupId>
+		<artifactId>parent</artifactId>
+		<version>1.0</version>
+		<relativePath>../parent</relativePath>
+	</parent>
+	<artifactId>java7-connector</artifactId>
+	<version>0.1</version>
+	<name>Service connector (Java 7)</name>
+	<description>This project brings all necessary parts for instantiation of a standard service connector.</description>
+
+	<properties>
+		<targetJdk>1.7</targetJdk>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.ds2os.vsl</groupId>
+			<artifactId>core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.ds2os.vsl</groupId>
+			<artifactId>net-utils</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.ds2os.vsl</groupId>
+			<artifactId>databind-mapper</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.ds2os.vsl</groupId>
+			<artifactId>rest-connector</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>

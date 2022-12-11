@@ -1,0 +1,13 @@
+<agentRecord type="/basic/composed" reader="" writer="">
+    <agentID type="/basic/text" restrictions="regularExpression='^[a-zA-Z]+[0-9]+$'"
+        reader="" writer=""></agentID>
+    <timestamp type="/basic/number" reader="" writer=""></timestamp>
+    <supportedTransports type="/system/agentRegistryList"
+        reader="" writer="" restrictions="allowedTypes='/system/transport'"></supportedTransports>
+    <certificateExpiration type="/basic/number"
+        reader="" writer="">0
+    </certificateExpiration>
+    <korHash type="/basic/text" reader="" writer=""></korHash>
+    <groupID type="/basic/text" reader="" writer=""></groupID>
+    <numKAs type="/basic/number" reader="" writer=""></numKAs>
+</agentRecord>

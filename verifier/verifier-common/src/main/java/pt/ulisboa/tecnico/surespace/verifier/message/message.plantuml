@@ -1,0 +1,104 @@
+@startuml
+
+title __MESSAGE's Class Diagram__\n
+
+  namespace pt.ulisboa.tecnico.surespace.verifier.message {
+    class pt.ulisboa.tecnico.surespace.verifier.message.SignedVerifyProofRequest {
+        {static} - serialVersionUID : long
+        + clone()
+        {static} + newBuilder()
+        - SignedVerifyProofRequest()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.verifier.message {
+    class pt.ulisboa.tecnico.surespace.verifier.message.SignedVerifyProofRequest.SignedVerifyProofRequestBuilder {
+        + SignedVerifyProofRequestBuilder()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.verifier.message {
+    class pt.ulisboa.tecnico.surespace.verifier.message.SignedVerifyProofRequest.VerifyProofRequest {
+        {static} - serialVersionUID : long
+        + clone()
+        + getLocationProof()
+        {static} + newBuilder()
+        - VerifyProofRequest()
+        - setLocationProof()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.verifier.message {
+    class pt.ulisboa.tecnico.surespace.verifier.message.SignedVerifyProofRequest.VerifyProofRequest.VerifyProofRequestBuilder {
+        + VerifyProofRequestBuilder()
+        + setLocationProof()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.verifier.message {
+    class pt.ulisboa.tecnico.surespace.verifier.message.SignedVerifyProofResponse {
+        {static} - serialVersionUID : long
+        + clone()
+        {static} + newBuilder()
+        - SignedVerifyProofResponse()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.verifier.message {
+    class pt.ulisboa.tecnico.surespace.verifier.message.SignedVerifyProofResponse.SignedVerifyProofResponseBuilder {
+        + SignedVerifyProofResponseBuilder()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.verifier.message {
+    class pt.ulisboa.tecnico.surespace.verifier.message.SignedVerifyProofResponse.VerifyProofResponse {
+        - proofAccepted : boolean
+        {static} - serialVersionUID : long
+        + clone()
+        + isProofAccepted()
+        {static} + newBuilder()
+        - VerifyProofResponse()
+        - setProofAccepted()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.verifier.message {
+    class pt.ulisboa.tecnico.surespace.verifier.message.SignedVerifyProofResponse.VerifyProofResponse.VerifyProofResponseBuilder {
+        + VerifyProofResponseBuilder()
+        + setProofAccepted()
+    }
+  }
+  
+
+  pt.ulisboa.tecnico.surespace.verifier.message.SignedVerifyProofRequest -up-|> pt.ulisboa.tecnico.surespace.common.message.SignedMessage
+  pt.ulisboa.tecnico.surespace.verifier.message.SignedVerifyProofRequest +-down- pt.ulisboa.tecnico.surespace.verifier.message.SignedVerifyProofRequest.SignedVerifyProofRequestBuilder
+  pt.ulisboa.tecnico.surespace.verifier.message.SignedVerifyProofRequest +-down- pt.ulisboa.tecnico.surespace.verifier.message.SignedVerifyProofRequest.VerifyProofRequest
+  pt.ulisboa.tecnico.surespace.verifier.message.SignedVerifyProofRequest.SignedVerifyProofRequestBuilder -up-|> pt.ulisboa.tecnico.surespace.common.message.SignedMessage.SignedMessageBuilder
+  pt.ulisboa.tecnico.surespace.verifier.message.SignedVerifyProofRequest.VerifyProofRequest -up-|> pt.ulisboa.tecnico.surespace.common.message.Message
+  pt.ulisboa.tecnico.surespace.verifier.message.SignedVerifyProofRequest.VerifyProofRequest o-- pt.ulisboa.tecnico.surespace.common.proof.LocationProof : locationProof
+  pt.ulisboa.tecnico.surespace.verifier.message.SignedVerifyProofRequest.VerifyProofRequest +-down- pt.ulisboa.tecnico.surespace.verifier.message.SignedVerifyProofRequest.VerifyProofRequest.VerifyProofRequestBuilder
+  pt.ulisboa.tecnico.surespace.verifier.message.SignedVerifyProofRequest.VerifyProofRequest.VerifyProofRequestBuilder -up-|> pt.ulisboa.tecnico.surespace.common.message.Message.MessageBuilder
+  pt.ulisboa.tecnico.surespace.verifier.message.SignedVerifyProofResponse -up-|> pt.ulisboa.tecnico.surespace.common.message.SignedMessage
+  pt.ulisboa.tecnico.surespace.verifier.message.SignedVerifyProofResponse +-down- pt.ulisboa.tecnico.surespace.verifier.message.SignedVerifyProofResponse.SignedVerifyProofResponseBuilder
+  pt.ulisboa.tecnico.surespace.verifier.message.SignedVerifyProofResponse +-down- pt.ulisboa.tecnico.surespace.verifier.message.SignedVerifyProofResponse.VerifyProofResponse
+  pt.ulisboa.tecnico.surespace.verifier.message.SignedVerifyProofResponse.SignedVerifyProofResponseBuilder -up-|> pt.ulisboa.tecnico.surespace.common.message.SignedMessage.SignedMessageBuilder
+  pt.ulisboa.tecnico.surespace.verifier.message.SignedVerifyProofResponse.VerifyProofResponse -up-|> pt.ulisboa.tecnico.surespace.common.message.Message
+  pt.ulisboa.tecnico.surespace.verifier.message.SignedVerifyProofResponse.VerifyProofResponse +-down- pt.ulisboa.tecnico.surespace.verifier.message.SignedVerifyProofResponse.VerifyProofResponse.VerifyProofResponseBuilder
+  pt.ulisboa.tecnico.surespace.verifier.message.SignedVerifyProofResponse.VerifyProofResponse.VerifyProofResponseBuilder -up-|> pt.ulisboa.tecnico.surespace.common.message.Message.MessageBuilder
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

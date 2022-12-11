@@ -1,0 +1,20 @@
+message VslNode {
+    repeated ChildAt children = 1;
+
+    optional string value = 2;
+    repeated string types = 3;
+    optional sint64 version = 4;
+    optional uint64 timestamp = 5;
+    optional string access = 6;
+    repeated MapEntryStringString restrictions = 7;
+
+    message ChildAt {
+        required VslNode node = 1;
+        required string address = 2;
+    }
+
+    message MapEntryStringString {
+        required string key = 1;
+        required string value = 2;
+    }
+}

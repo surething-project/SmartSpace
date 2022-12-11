@@ -1,0 +1,9 @@
+<statisticsService type="/basic/composed" writer=""
+    reader="">
+    <availableStatistics type="/basic/text" writer=""
+        reader="" />
+    <getStatisticsFor type="/basic/composed" writer=""
+        reader="" />
+    <getStatisticsSummaryFor type="/basic/composed"
+        writer="" reader="" />
+</statisticsService>

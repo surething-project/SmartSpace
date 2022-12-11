@@ -1,0 +1,2 @@
+<model type="/basic/number" restriction="minimumValue='0',maximumValue='1'">0
+</model>

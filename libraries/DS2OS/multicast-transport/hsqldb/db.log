@@ -1,0 +1,181 @@
+/*C1*/SET SCHEMA SYSTEM_LOBS
+INSERT INTO BLOCKS VALUES(0,2147483647,0)
+COMMIT
+/*C2*/SET SCHEMA PUBLIC
+SET FILES LOG SIZE 10
+SET FILES DEFRAG 20
+DROP TABLE IF EXISTS kor_data
+DROP TABLE IF EXISTS kor_version
+DROP TABLE IF EXISTS kor_structure
+CREATE CACHED TABLE kor_structure (address LONGVARCHAR,type LONGVARCHAR,reader LONGVARCHAR,writer LONGVARCHAR,restriction LONGVARCHAR,cacheParameters LONGVARCHAR,PRIMARY KEY (address))
+CREATE CACHED TABLE kor_version (address LONGVARCHAR,version BIGINT,timestamp DECIMAL(64,5))
+CREATE CACHED TABLE kor_data (address LONGVARCHAR,timestamp DECIMAL(64,5),value VARCHAR(16M))
+INSERT INTO KOR_STRUCTURE VALUES('/','/treeRoot','system','system','','')
+COMMIT
+INSERT INTO KOR_DATA VALUES('/',1583335991933.00000,'')
+INSERT INTO KOR_VERSION VALUES('/',0,1583335991933.00000)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1','/treeRoot','system','system','','')
+COMMIT
+INSERT INTO KOR_DATA VALUES('/agent1',1583335991933.00001,'')
+INSERT INTO KOR_VERSION VALUES('/agent1',0,1583335991933.00001)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system','/basic/composed','system','system','','')
+COMMIT
+INSERT INTO KOR_DATA VALUES('/agent1/system',1583335991949.00000,'')
+INSERT INTO KOR_VERSION VALUES('/agent1/system',0,1583335991949.00000)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system/agentRegistryService','/system/agentRegistryService;/basic/composed','system/agentRegistryService;system','system/agentRegistryService;system','',NULL)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system/agentRegistryService/connectedKAs','/system/agentRegistryList;/basic/list;/basic/composed','system/agentRegistryService;system','system/agentRegistryService;system','',NULL)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system/agentRegistryService/connectedKAs/elements','/basic/text','system/agentRegistryService;system','system/agentRegistryService;system','',NULL)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system/agentRegistryService/connectedKAs/del','/basic/text','system/agentRegistryService;system','system/agentRegistryService;system','',NULL)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system/agentRegistryService/connectedKAs/add','/basic/text','system/agentRegistryService;system','system/agentRegistryService;system','',NULL)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system/agentRegistryService/unconnectedKAs','/system/agentRegistryList;/basic/list;/basic/composed','system/agentRegistryService;system','system/agentRegistryService;system','',NULL)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system/agentRegistryService/unconnectedKAs/elements','/basic/text','system/agentRegistryService;system','system/agentRegistryService;system','',NULL)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system/agentRegistryService/unconnectedKAs/del','/basic/text','system/agentRegistryService;system','system/agentRegistryService;system','',NULL)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system/agentRegistryService/unconnectedKAs/add','/basic/text','system/agentRegistryService;system','system/agentRegistryService;system','',NULL)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system/agentRegistryService/currentMulticastGroupKey','/basic/text','system/agentRegistryService;system','system/agentRegistryService;system','',NULL)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system/agentRegistryService/multicastGroupKeys','/system/agentRegistryList;/basic/list;/basic/composed','system/agentRegistryService;system','system/agentRegistryService;system','',NULL)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system/agentRegistryService/multicastGroupKeys/elements','/basic/text','system/agentRegistryService;system','system/agentRegistryService;system','',NULL)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system/agentRegistryService/multicastGroupKeys/del','/basic/text','system/agentRegistryService;system','system/agentRegistryService;system','',NULL)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system/agentRegistryService/multicastGroupKeys/add','/basic/text','system/agentRegistryService;system','system/agentRegistryService;system','',NULL)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system/agentRegistryService/isLeader','/derived/boolean;/basic/number','system/agentRegistryService;system','system/agentRegistryService;system','minimumValue=''0'',maximumValue=''1''',NULL)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system/agentRegistryService/newGroupKey','/basic/text','system/agentRegistryService;system','system/agentRegistryService;system;system/korSync','',NULL)
+COMMIT
+INSERT INTO KOR_DATA VALUES('/agent1/system/agentRegistryService/connectedKAs',1583335992042.00000,'')
+INSERT INTO KOR_DATA VALUES('/agent1/system/agentRegistryService/connectedKAs/add',1583335992042.00000,'')
+INSERT INTO KOR_DATA VALUES('/agent1/system/agentRegistryService/connectedKAs/del',1583335992042.00000,'')
+INSERT INTO KOR_DATA VALUES('/agent1/system/agentRegistryService/connectedKAs/elements',1583335992042.00000,'')
+INSERT INTO KOR_DATA VALUES('/agent1/system/agentRegistryService/currentMulticastGroupKey',1583335992042.00000,'')
+INSERT INTO KOR_DATA VALUES('/agent1/system/agentRegistryService/isLeader',1583335992042.00000,'1')
+INSERT INTO KOR_DATA VALUES('/agent1/system/agentRegistryService/multicastGroupKeys',1583335992042.00000,'')
+INSERT INTO KOR_DATA VALUES('/agent1/system/agentRegistryService/multicastGroupKeys/add',1583335992042.00000,'')
+INSERT INTO KOR_DATA VALUES('/agent1/system/agentRegistryService/multicastGroupKeys/del',1583335992042.00000,'')
+INSERT INTO KOR_DATA VALUES('/agent1/system/agentRegistryService/multicastGroupKeys/elements',1583335992042.00000,'')
+INSERT INTO KOR_DATA VALUES('/agent1/system/agentRegistryService/newGroupKey',1583335992042.00000,'')
+INSERT INTO KOR_DATA VALUES('/agent1/system/agentRegistryService/unconnectedKAs',1583335992042.00000,'')
+INSERT INTO KOR_DATA VALUES('/agent1/system/agentRegistryService/unconnectedKAs/add',1583335992042.00000,'')
+INSERT INTO KOR_DATA VALUES('/agent1/system/agentRegistryService/unconnectedKAs/del',1583335992042.00000,'')
+INSERT INTO KOR_DATA VALUES('/agent1/system/agentRegistryService/unconnectedKAs/elements',1583335992042.00000,'')
+INSERT INTO KOR_VERSION VALUES('/agent1/system/agentRegistryService/connectedKAs',0,1583335992042.00000)
+INSERT INTO KOR_VERSION VALUES('/agent1/system/agentRegistryService',0,1583335992042.00000)
+INSERT INTO KOR_VERSION VALUES('/agent1/system',1,1583335992042.00000)
+INSERT INTO KOR_VERSION VALUES('/agent1/system/agentRegistryService/connectedKAs/add',0,1583335992042.00000)
+INSERT INTO KOR_VERSION VALUES('/agent1/system/agentRegistryService/connectedKAs/del',0,1583335992042.00000)
+INSERT INTO KOR_VERSION VALUES('/agent1/system/agentRegistryService/connectedKAs/elements',0,1583335992042.00000)
+INSERT INTO KOR_VERSION VALUES('/agent1/system/agentRegistryService/currentMulticastGroupKey',0,1583335992042.00000)
+INSERT INTO KOR_VERSION VALUES('/agent1/system/agentRegistryService/isLeader',0,1583335992042.00000)
+INSERT INTO KOR_VERSION VALUES('/agent1/system/agentRegistryService/multicastGroupKeys',0,1583335992042.00000)
+INSERT INTO KOR_VERSION VALUES('/agent1/system/agentRegistryService/multicastGroupKeys/add',0,1583335992042.00000)
+INSERT INTO KOR_VERSION VALUES('/agent1/system/agentRegistryService/multicastGroupKeys/del',0,1583335992042.00000)
+INSERT INTO KOR_VERSION VALUES('/agent1/system/agentRegistryService/multicastGroupKeys/elements',0,1583335992042.00000)
+INSERT INTO KOR_VERSION VALUES('/agent1/system/agentRegistryService/newGroupKey',0,1583335992042.00000)
+INSERT INTO KOR_VERSION VALUES('/agent1/system/agentRegistryService/unconnectedKAs',0,1583335992042.00000)
+INSERT INTO KOR_VERSION VALUES('/agent1/system/agentRegistryService/unconnectedKAs/add',0,1583335992042.00000)
+INSERT INTO KOR_VERSION VALUES('/agent1/system/agentRegistryService/unconnectedKAs/del',0,1583335992042.00000)
+INSERT INTO KOR_VERSION VALUES('/agent1/system/agentRegistryService/unconnectedKAs/elements',0,1583335992042.00000)
+COMMIT
+/*C3*/SET SCHEMA PUBLIC
+SET FILES LOG SIZE 10
+SET FILES DEFRAG 20
+DROP TABLE IF EXISTS kor_data
+DROP TABLE IF EXISTS kor_version
+DROP TABLE IF EXISTS kor_structure
+CREATE CACHED TABLE kor_structure (address LONGVARCHAR,type LONGVARCHAR,reader LONGVARCHAR,writer LONGVARCHAR,restriction LONGVARCHAR,cacheParameters LONGVARCHAR,PRIMARY KEY (address))
+CREATE CACHED TABLE kor_version (address LONGVARCHAR,version BIGINT,timestamp DECIMAL(64,5))
+CREATE CACHED TABLE kor_data (address LONGVARCHAR,timestamp DECIMAL(64,5),value VARCHAR(16M))
+INSERT INTO KOR_STRUCTURE VALUES('/','/treeRoot','system','system','','')
+COMMIT
+INSERT INTO KOR_DATA VALUES('/',1583335993833.00000,'')
+INSERT INTO KOR_VERSION VALUES('/',0,1583335993833.00000)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1','/treeRoot','system','system','','')
+COMMIT
+INSERT INTO KOR_DATA VALUES('/agent1',1583335993833.00001,'')
+INSERT INTO KOR_VERSION VALUES('/agent1',0,1583335993833.00001)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system','/basic/composed','system','system','','')
+COMMIT
+INSERT INTO KOR_DATA VALUES('/agent1/system',1583335993833.00002,'')
+INSERT INTO KOR_VERSION VALUES('/agent1/system',0,1583335993833.00002)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system/agentRegistryService','/system/agentRegistryService;/basic/composed','system/agentRegistryService;system','system/agentRegistryService;system','',NULL)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system/agentRegistryService/connectedKAs','/system/agentRegistryList;/basic/list;/basic/composed','system/agentRegistryService;system','system/agentRegistryService;system','',NULL)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system/agentRegistryService/connectedKAs/elements','/basic/text','system/agentRegistryService;system','system/agentRegistryService;system','',NULL)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system/agentRegistryService/connectedKAs/del','/basic/text','system/agentRegistryService;system','system/agentRegistryService;system','',NULL)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system/agentRegistryService/connectedKAs/add','/basic/text','system/agentRegistryService;system','system/agentRegistryService;system','',NULL)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system/agentRegistryService/unconnectedKAs','/system/agentRegistryList;/basic/list;/basic/composed','system/agentRegistryService;system','system/agentRegistryService;system','',NULL)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system/agentRegistryService/unconnectedKAs/elements','/basic/text','system/agentRegistryService;system','system/agentRegistryService;system','',NULL)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system/agentRegistryService/unconnectedKAs/del','/basic/text','system/agentRegistryService;system','system/agentRegistryService;system','',NULL)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system/agentRegistryService/unconnectedKAs/add','/basic/text','system/agentRegistryService;system','system/agentRegistryService;system','',NULL)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system/agentRegistryService/currentMulticastGroupKey','/basic/text','system/agentRegistryService;system','system/agentRegistryService;system','',NULL)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system/agentRegistryService/multicastGroupKeys','/system/agentRegistryList;/basic/list;/basic/composed','system/agentRegistryService;system','system/agentRegistryService;system','',NULL)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system/agentRegistryService/multicastGroupKeys/elements','/basic/text','system/agentRegistryService;system','system/agentRegistryService;system','',NULL)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system/agentRegistryService/multicastGroupKeys/del','/basic/text','system/agentRegistryService;system','system/agentRegistryService;system','',NULL)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system/agentRegistryService/multicastGroupKeys/add','/basic/text','system/agentRegistryService;system','system/agentRegistryService;system','',NULL)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system/agentRegistryService/isLeader','/derived/boolean;/basic/number','system/agentRegistryService;system','system/agentRegistryService;system','minimumValue=''0'',maximumValue=''1''',NULL)
+COMMIT
+INSERT INTO KOR_STRUCTURE VALUES('/agent1/system/agentRegistryService/newGroupKey','/basic/text','system/agentRegistryService;system','system/agentRegistryService;system;system/korSync','',NULL)
+COMMIT
+INSERT INTO KOR_DATA VALUES('/agent1/system/agentRegistryService/connectedKAs',1583335994004.00000,'')
+INSERT INTO KOR_DATA VALUES('/agent1/system/agentRegistryService/connectedKAs/add',1583335994004.00000,'')
+INSERT INTO KOR_DATA VALUES('/agent1/system/agentRegistryService/connectedKAs/del',1583335994004.00000,'')
+INSERT INTO KOR_DATA VALUES('/agent1/system/agentRegistryService/connectedKAs/elements',1583335994004.00000,'')
+INSERT INTO KOR_DATA VALUES('/agent1/system/agentRegistryService/currentMulticastGroupKey',1583335994004.00000,'')
+INSERT INTO KOR_DATA VALUES('/agent1/system/agentRegistryService/isLeader',1583335994004.00000,'1')
+INSERT INTO KOR_DATA VALUES('/agent1/system/agentRegistryService/multicastGroupKeys',1583335994004.00000,'')
+INSERT INTO KOR_DATA VALUES('/agent1/system/agentRegistryService/multicastGroupKeys/add',1583335994004.00000,'')
+INSERT INTO KOR_DATA VALUES('/agent1/system/agentRegistryService/multicastGroupKeys/del',1583335994004.00000,'')
+INSERT INTO KOR_DATA VALUES('/agent1/system/agentRegistryService/multicastGroupKeys/elements',1583335994004.00000,'')
+INSERT INTO KOR_DATA VALUES('/agent1/system/agentRegistryService/newGroupKey',1583335994004.00000,'')
+INSERT INTO KOR_DATA VALUES('/agent1/system/agentRegistryService/unconnectedKAs',1583335994004.00000,'')
+INSERT INTO KOR_DATA VALUES('/agent1/system/agentRegistryService/unconnectedKAs/add',1583335994004.00000,'')
+INSERT INTO KOR_DATA VALUES('/agent1/system/agentRegistryService/unconnectedKAs/del',1583335994004.00000,'')
+INSERT INTO KOR_DATA VALUES('/agent1/system/agentRegistryService/unconnectedKAs/elements',1583335994004.00000,'')
+INSERT INTO KOR_VERSION VALUES('/agent1/system/agentRegistryService/connectedKAs',0,1583335994004.00000)
+INSERT INTO KOR_VERSION VALUES('/agent1/system/agentRegistryService',0,1583335994004.00000)
+INSERT INTO KOR_VERSION VALUES('/agent1/system',1,1583335994004.00000)
+INSERT INTO KOR_VERSION VALUES('/agent1/system/agentRegistryService/connectedKAs/add',0,1583335994004.00000)
+INSERT INTO KOR_VERSION VALUES('/agent1/system/agentRegistryService/connectedKAs/del',0,1583335994004.00000)
+INSERT INTO KOR_VERSION VALUES('/agent1/system/agentRegistryService/connectedKAs/elements',0,1583335994004.00000)
+INSERT INTO KOR_VERSION VALUES('/agent1/system/agentRegistryService/currentMulticastGroupKey',0,1583335994004.00000)
+INSERT INTO KOR_VERSION VALUES('/agent1/system/agentRegistryService/isLeader',0,1583335994004.00000)
+INSERT INTO KOR_VERSION VALUES('/agent1/system/agentRegistryService/multicastGroupKeys',0,1583335994004.00000)
+INSERT INTO KOR_VERSION VALUES('/agent1/system/agentRegistryService/multicastGroupKeys/add',0,1583335994004.00000)
+INSERT INTO KOR_VERSION VALUES('/agent1/system/agentRegistryService/multicastGroupKeys/del',0,1583335994004.00000)
+INSERT INTO KOR_VERSION VALUES('/agent1/system/agentRegistryService/multicastGroupKeys/elements',0,1583335994004.00000)
+INSERT INTO KOR_VERSION VALUES('/agent1/system/agentRegistryService/newGroupKey',0,1583335994004.00000)
+INSERT INTO KOR_VERSION VALUES('/agent1/system/agentRegistryService/unconnectedKAs',0,1583335994004.00000)
+INSERT INTO KOR_VERSION VALUES('/agent1/system/agentRegistryService/unconnectedKAs/add',0,1583335994004.00000)
+INSERT INTO KOR_VERSION VALUES('/agent1/system/agentRegistryService/unconnectedKAs/del',0,1583335994004.00000)
+INSERT INTO KOR_VERSION VALUES('/agent1/system/agentRegistryService/unconnectedKAs/elements',0,1583335994004.00000)
+COMMIT

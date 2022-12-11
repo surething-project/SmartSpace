@@ -1,0 +1,144 @@
+@startuml
+
+title __ORCHESTRATOR-CONTRACT's Class Diagram__\n
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator.grpc {
+    class pt.ulisboa.tecnico.surespace.orchestrator.grpc.Orchestrator {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator.grpc {
+    class pt.ulisboa.tecnico.surespace.orchestrator.grpc.OrchestratorAdapter {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator.grpc {
+    class pt.ulisboa.tecnico.surespace.orchestrator.grpc.OrchestratorServiceGrpc {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator.grpc {
+    class pt.ulisboa.tecnico.surespace.orchestrator.grpc.PingRequest {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator.grpc {
+    interface pt.ulisboa.tecnico.surespace.orchestrator.grpc.PingRequestOrBuilder {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator.grpc {
+    class pt.ulisboa.tecnico.surespace.orchestrator.grpc.PingResponse {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator.grpc {
+    interface pt.ulisboa.tecnico.surespace.orchestrator.grpc.PingResponseOrBuilder {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator.grpc {
+    class pt.ulisboa.tecnico.surespace.orchestrator.grpc.ProveLocationRequest {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator.grpc {
+    interface pt.ulisboa.tecnico.surespace.orchestrator.grpc.ProveLocationRequestOrBuilder {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator.grpc {
+    class pt.ulisboa.tecnico.surespace.orchestrator.grpc.ProveLocationResponse {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator.grpc {
+    interface pt.ulisboa.tecnico.surespace.orchestrator.grpc.ProveLocationResponseOrBuilder {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator.grpc {
+    class pt.ulisboa.tecnico.surespace.orchestrator.grpc.RequestAuthorizationRequest {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator.grpc {
+    interface pt.ulisboa.tecnico.surespace.orchestrator.grpc.RequestAuthorizationRequestOrBuilder {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator.grpc {
+    class pt.ulisboa.tecnico.surespace.orchestrator.grpc.RequestAuthorizationResponse {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator.grpc {
+    interface pt.ulisboa.tecnico.surespace.orchestrator.grpc.RequestAuthorizationResponseOrBuilder {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator.grpc {
+    class pt.ulisboa.tecnico.surespace.orchestrator.grpc.RequestProofInformationRequest {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator.grpc {
+    interface pt.ulisboa.tecnico.surespace.orchestrator.grpc.RequestProofInformationRequestOrBuilder {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator.grpc {
+    class pt.ulisboa.tecnico.surespace.orchestrator.grpc.RequestProofInformationResponse {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.orchestrator.grpc {
+    interface pt.ulisboa.tecnico.surespace.orchestrator.grpc.RequestProofInformationResponseOrBuilder {
+    }
+  }
+  
+
+  pt.ulisboa.tecnico.surespace.orchestrator.grpc.PingRequest .up.|> pt.ulisboa.tecnico.surespace.orchestrator.grpc.PingRequestOrBuilder
+  pt.ulisboa.tecnico.surespace.orchestrator.grpc.PingRequest -up-|> com.google.protobuf.GeneratedMessageV3
+  pt.ulisboa.tecnico.surespace.orchestrator.grpc.PingResponse .up.|> pt.ulisboa.tecnico.surespace.orchestrator.grpc.PingResponseOrBuilder
+  pt.ulisboa.tecnico.surespace.orchestrator.grpc.PingResponse -up-|> com.google.protobuf.GeneratedMessageV3
+  pt.ulisboa.tecnico.surespace.orchestrator.grpc.ProveLocationRequest .up.|> pt.ulisboa.tecnico.surespace.orchestrator.grpc.ProveLocationRequestOrBuilder
+  pt.ulisboa.tecnico.surespace.orchestrator.grpc.ProveLocationRequest -up-|> com.google.protobuf.GeneratedMessageV3
+  pt.ulisboa.tecnico.surespace.orchestrator.grpc.ProveLocationResponse .up.|> pt.ulisboa.tecnico.surespace.orchestrator.grpc.ProveLocationResponseOrBuilder
+  pt.ulisboa.tecnico.surespace.orchestrator.grpc.ProveLocationResponse -up-|> com.google.protobuf.GeneratedMessageV3
+  pt.ulisboa.tecnico.surespace.orchestrator.grpc.RequestAuthorizationRequest .up.|> pt.ulisboa.tecnico.surespace.orchestrator.grpc.RequestAuthorizationRequestOrBuilder
+  pt.ulisboa.tecnico.surespace.orchestrator.grpc.RequestAuthorizationRequest -up-|> com.google.protobuf.GeneratedMessageV3
+  pt.ulisboa.tecnico.surespace.orchestrator.grpc.RequestAuthorizationResponse .up.|> pt.ulisboa.tecnico.surespace.orchestrator.grpc.RequestAuthorizationResponseOrBuilder
+  pt.ulisboa.tecnico.surespace.orchestrator.grpc.RequestAuthorizationResponse -up-|> com.google.protobuf.GeneratedMessageV3
+  pt.ulisboa.tecnico.surespace.orchestrator.grpc.RequestProofInformationRequest .up.|> pt.ulisboa.tecnico.surespace.orchestrator.grpc.RequestProofInformationRequestOrBuilder
+  pt.ulisboa.tecnico.surespace.orchestrator.grpc.RequestProofInformationRequest -up-|> com.google.protobuf.GeneratedMessageV3
+  pt.ulisboa.tecnico.surespace.orchestrator.grpc.RequestProofInformationResponse .up.|> pt.ulisboa.tecnico.surespace.orchestrator.grpc.RequestProofInformationResponseOrBuilder
+  pt.ulisboa.tecnico.surespace.orchestrator.grpc.RequestProofInformationResponse -up-|> com.google.protobuf.GeneratedMessageV3
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

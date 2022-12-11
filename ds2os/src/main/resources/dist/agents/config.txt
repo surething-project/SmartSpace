@@ -1,0 +1,10 @@
+kor.archive.enabled=0
+kor.db.persist=0
+kor.db.username=Sur3Thing
+kor.db.password=]PZ+<xCY/{9+c%VX
+cache.enabled=0
+alivePing.senderIntervall=2
+transport.allowLoopback=0
+modelRepository.localPath=../../models
+#modelRepository.cmrUrl=https://gitlab.dev.ds2os.org/ds2os-devs/vsl_models/raw/master/models
+modelRepository.isSLMR=1

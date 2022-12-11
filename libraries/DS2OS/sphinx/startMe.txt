@@ -1,0 +1,5 @@
+This is the sphinx, a option of the ka that can be used to detect anomalous accesses.
+
+It can be activated by using the option security.sphinx.enabled=1 and security.sphinx.blockOnAnomaly=1 in the KA.
+
+To coordinate this module on different KA you can start the echidna service that can be found in the vslservices project.

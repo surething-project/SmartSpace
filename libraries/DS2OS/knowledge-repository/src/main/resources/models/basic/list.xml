@@ -1,0 +1,6 @@
+<model type="basic/composed">
+    <elements type="/basic/text" />
+    <del type="/basic/text" />
+    <add type="/basic/text" />
+</model>
+

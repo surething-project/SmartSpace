@@ -1,0 +1,16 @@
+SETUP:
+
+download/install eclipse (newest version, not repository) (if not yet done)
+
+clone ds2os-devs/VSL: 
+git clone git@gitlab.lrz.de:s2o/ds2os-devs/vsl.git local-vsl
+
+install eclipse plugins (checkstyle, findbugs(optional), pmd(optional)) (Help->Marketplace->search for plugins)
+restart eclipse
+Import VSL repo: Import->Maven->Existing Maven Projects 
+select cloned VSL directory (containing the parent/core/aliveping/... folders, in case of the previous clone command it would be the folder local-vsl)
+
+For the (sub-)projects you want to work on (e.g. core):
+rightclick project->checkstyle->activate checkstyle (should be done automatically)
+rightclick project->checkstyle->create formatter profile
+

@@ -1,0 +1,11 @@
+# compiled classes
+*.class
+
+# IntelliJ files
+.idea/
+
+# the Pseudonym CA was not implemented
+pseudonym_ca/**/*
+
+# ignore target folder
+target/

@@ -1,0 +1,463 @@
+@startuml
+
+title __COMMON's Class Diagram__\n
+
+  namespace pt.ulisboa.tecnico.surespace.common.async {
+    abstract class pt.ulisboa.tecnico.surespace.common.async.AsyncCollector {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.async {
+    interface pt.ulisboa.tecnico.surespace.common.async.AsyncListener {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.async {
+    namespace exception {
+      class pt.ulisboa.tecnico.surespace.common.async.exception.AsyncException {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.connection {
+    abstract class pt.ulisboa.tecnico.surespace.common.connection.Client {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.connection {
+    class pt.ulisboa.tecnico.surespace.common.connection.ServerInitializer {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.domain {
+    class pt.ulisboa.tecnico.surespace.common.domain.Entity {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.domain {
+    class pt.ulisboa.tecnico.surespace.common.domain.Nonce {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.domain {
+    abstract class pt.ulisboa.tecnico.surespace.common.domain.Object {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.domain {
+    class pt.ulisboa.tecnico.surespace.common.domain.TimeInterval {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.domain {
+    class pt.ulisboa.tecnico.surespace.common.domain.Timestamp {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.domain {
+    namespace exception {
+      class pt.ulisboa.tecnico.surespace.common.domain.exception.ObjectException {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.exception {
+    class pt.ulisboa.tecnico.surespace.common.exception.BroadException {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.location {
+    abstract class pt.ulisboa.tecnico.surespace.common.location.Location {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.location {
+    interface pt.ulisboa.tecnico.surespace.common.location.LocationConverter {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.location {
+    class pt.ulisboa.tecnico.surespace.common.location.LocationGPS {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.location {
+    class pt.ulisboa.tecnico.surespace.common.location.LocationOLC {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.location {
+    class pt.ulisboa.tecnico.surespace.common.location.LocationProximity {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.location {
+    namespace exception {
+      class pt.ulisboa.tecnico.surespace.common.location.exception.LocationException {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    class pt.ulisboa.tecnico.surespace.common.manager.EntityManager {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    interface pt.ulisboa.tecnico.surespace.common.manager.EntityManagerInterface {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    interface pt.ulisboa.tecnico.surespace.common.manager.GlobalManagerInterface {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    abstract class pt.ulisboa.tecnico.surespace.common.manager.KeyStoreManager {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    interface pt.ulisboa.tecnico.surespace.common.manager.KeyStoreManagerInterface {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    abstract class pt.ulisboa.tecnico.surespace.common.manager.LogManager {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    interface pt.ulisboa.tecnico.surespace.common.manager.LogManagerInterface {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    interface pt.ulisboa.tecnico.surespace.common.manager.ManagerInterface {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    class pt.ulisboa.tecnico.surespace.common.manager.NonceManager {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    interface pt.ulisboa.tecnico.surespace.common.manager.NonceManagerInterface {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    class pt.ulisboa.tecnico.surespace.common.manager.PropertyManager {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    interface pt.ulisboa.tecnico.surespace.common.manager.PropertyManagerInterface {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    namespace exception {
+      class pt.ulisboa.tecnico.surespace.common.manager.exception.EntityManagerException {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    namespace exception {
+      class pt.ulisboa.tecnico.surespace.common.manager.exception.KeyStoreManagerException {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    namespace exception {
+      class pt.ulisboa.tecnico.surespace.common.manager.exception.LogManagerException {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    namespace exception {
+      class pt.ulisboa.tecnico.surespace.common.manager.exception.ManagerException {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    namespace exception {
+      class pt.ulisboa.tecnico.surespace.common.manager.exception.NonceManagerException {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.manager {
+    namespace exception {
+      class pt.ulisboa.tecnico.surespace.common.manager.exception.PropertyManagerException {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    abstract class pt.ulisboa.tecnico.surespace.common.message.Message {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    class pt.ulisboa.tecnico.surespace.common.message.MessageValidator {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    abstract class pt.ulisboa.tecnico.surespace.common.message.SignedMessage {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    class pt.ulisboa.tecnico.surespace.common.message.SignedMessageValidator {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    class pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationRequest {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    class pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationResponse {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    class pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationRequest {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    class pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationResponse {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    abstract class pt.ulisboa.tecnico.surespace.common.message.Validator {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    namespace exception {
+      class pt.ulisboa.tecnico.surespace.common.message.exception.MessageAssertionException {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    namespace exception {
+      class pt.ulisboa.tecnico.surespace.common.message.exception.MessageException {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    namespace exception {
+      class pt.ulisboa.tecnico.surespace.common.message.exception.MessageValidatorException {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.proof {
+    class pt.ulisboa.tecnico.surespace.common.proof.Beacon {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.proof {
+    abstract class pt.ulisboa.tecnico.surespace.common.proof.Device {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.proof {
+    class pt.ulisboa.tecnico.surespace.common.proof.LocationProof {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.proof {
+    class pt.ulisboa.tecnico.surespace.common.proof.LocationProofProperties {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.proof {
+    class pt.ulisboa.tecnico.surespace.common.proof.Witness {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.signal {
+    class pt.ulisboa.tecnico.surespace.common.signal.Fragment {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.signal {
+    class pt.ulisboa.tecnico.surespace.common.signal.Reading {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.signal {
+    class pt.ulisboa.tecnico.surespace.common.signal.Signal {
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.signal {
+    namespace property {
+      class pt.ulisboa.tecnico.surespace.common.signal.property.Amplitude {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.signal {
+    namespace property {
+      class pt.ulisboa.tecnico.surespace.common.signal.property.Intensity {
+      }
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.signal {
+    namespace property {
+      abstract class pt.ulisboa.tecnico.surespace.common.signal.property.Property {
+      }
+    }
+  }
+  
+
+  pt.ulisboa.tecnico.surespace.common.async.exception.AsyncException -up-|> pt.ulisboa.tecnico.surespace.common.exception.BroadException
+  pt.ulisboa.tecnico.surespace.common.connection.Client .up.|> java.lang.AutoCloseable
+  pt.ulisboa.tecnico.surespace.common.domain.Entity -up-|> pt.ulisboa.tecnico.surespace.common.domain.Object
+  pt.ulisboa.tecnico.surespace.common.domain.Nonce -up-|> pt.ulisboa.tecnico.surespace.common.domain.Object
+  pt.ulisboa.tecnico.surespace.common.domain.Object .up.|> java.io.Serializable
+  pt.ulisboa.tecnico.surespace.common.domain.Object .up.|> java.lang.Cloneable
+  pt.ulisboa.tecnico.surespace.common.domain.TimeInterval -up-|> pt.ulisboa.tecnico.surespace.common.domain.Object
+  pt.ulisboa.tecnico.surespace.common.domain.TimeInterval o-- pt.ulisboa.tecnico.surespace.common.domain.Timestamp : notAfter
+  pt.ulisboa.tecnico.surespace.common.domain.TimeInterval o-- pt.ulisboa.tecnico.surespace.common.domain.Timestamp : notBefore
+  pt.ulisboa.tecnico.surespace.common.domain.Timestamp -up-|> pt.ulisboa.tecnico.surespace.common.domain.Object
+  pt.ulisboa.tecnico.surespace.common.domain.exception.ObjectException -up-|> pt.ulisboa.tecnico.surespace.common.exception.BroadException
+  pt.ulisboa.tecnico.surespace.common.location.Location -up-|> pt.ulisboa.tecnico.surespace.common.domain.Object
+  pt.ulisboa.tecnico.surespace.common.location.LocationGPS -up-|> pt.ulisboa.tecnico.surespace.common.location.Location
+  pt.ulisboa.tecnico.surespace.common.location.LocationOLC -up-|> pt.ulisboa.tecnico.surespace.common.location.Location
+  pt.ulisboa.tecnico.surespace.common.location.LocationProximity .up.|> java.lang.Comparable
+  pt.ulisboa.tecnico.surespace.common.location.LocationProximity -up-|> pt.ulisboa.tecnico.surespace.common.domain.Object
+  pt.ulisboa.tecnico.surespace.common.location.LocationProximity o-- pt.ulisboa.tecnico.surespace.common.location.LocationProximity.ProximityCode : code
+  pt.ulisboa.tecnico.surespace.common.location.exception.LocationException -up-|> pt.ulisboa.tecnico.surespace.common.exception.BroadException
+  pt.ulisboa.tecnico.surespace.common.manager.EntityManager .up.|> pt.ulisboa.tecnico.surespace.common.manager.EntityManagerInterface
+  pt.ulisboa.tecnico.surespace.common.manager.EntityManager o-- pt.ulisboa.tecnico.surespace.common.domain.Entity : currentEntity
+  pt.ulisboa.tecnico.surespace.common.manager.EntityManager o-- pt.ulisboa.tecnico.surespace.common.manager.PropertyManagerInterface : propertyManager
+  pt.ulisboa.tecnico.surespace.common.manager.KeyStoreManager .up.|> pt.ulisboa.tecnico.surespace.common.manager.KeyStoreManagerInterface
+  pt.ulisboa.tecnico.surespace.common.manager.KeyStoreManager o-- pt.ulisboa.tecnico.surespace.common.manager.PropertyManagerInterface : propertyManager
+  pt.ulisboa.tecnico.surespace.common.manager.LogManager .up.|> pt.ulisboa.tecnico.surespace.common.manager.LogManagerInterface
+  pt.ulisboa.tecnico.surespace.common.manager.NonceManager .up.|> pt.ulisboa.tecnico.surespace.common.manager.NonceManagerInterface
+  pt.ulisboa.tecnico.surespace.common.manager.PropertyManager .up.|> pt.ulisboa.tecnico.surespace.common.manager.PropertyManagerInterface
+  pt.ulisboa.tecnico.surespace.common.manager.PropertyManager o-- pt.ulisboa.tecnico.surespace.common.manager.LogManagerInterface : logManager
+  pt.ulisboa.tecnico.surespace.common.manager.exception.EntityManagerException -up-|> pt.ulisboa.tecnico.surespace.common.manager.exception.ManagerException
+  pt.ulisboa.tecnico.surespace.common.manager.exception.KeyStoreManagerException -up-|> pt.ulisboa.tecnico.surespace.common.manager.exception.ManagerException
+  pt.ulisboa.tecnico.surespace.common.manager.exception.LogManagerException -up-|> pt.ulisboa.tecnico.surespace.common.manager.exception.ManagerException
+  pt.ulisboa.tecnico.surespace.common.manager.exception.ManagerException -up-|> pt.ulisboa.tecnico.surespace.common.exception.BroadException
+  pt.ulisboa.tecnico.surespace.common.manager.exception.NonceManagerException -up-|> pt.ulisboa.tecnico.surespace.common.manager.exception.ManagerException
+  pt.ulisboa.tecnico.surespace.common.manager.exception.PropertyManagerException -up-|> pt.ulisboa.tecnico.surespace.common.manager.exception.ManagerException
+  pt.ulisboa.tecnico.surespace.common.message.Message -up-|> pt.ulisboa.tecnico.surespace.common.domain.Object
+  pt.ulisboa.tecnico.surespace.common.message.Message o-- pt.ulisboa.tecnico.surespace.common.domain.Nonce : nonce
+  pt.ulisboa.tecnico.surespace.common.message.Message o-- pt.ulisboa.tecnico.surespace.common.domain.Entity : receiver
+  pt.ulisboa.tecnico.surespace.common.message.Message o-- pt.ulisboa.tecnico.surespace.common.domain.Entity : sender
+  pt.ulisboa.tecnico.surespace.common.message.MessageValidator -up-|> pt.ulisboa.tecnico.surespace.common.message.Validator
+  pt.ulisboa.tecnico.surespace.common.message.SignedMessage -up-|> pt.ulisboa.tecnico.surespace.common.domain.Object
+  pt.ulisboa.tecnico.surespace.common.message.SignedMessage o-- MessageType : message
+  pt.ulisboa.tecnico.surespace.common.message.SignedMessageValidator -up-|> pt.ulisboa.tecnico.surespace.common.message.Validator
+  pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationRequest -up-|> pt.ulisboa.tecnico.surespace.common.message.SignedMessage
+  pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationResponse -up-|> pt.ulisboa.tecnico.surespace.common.message.SignedMessage
+  pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationRequest -up-|> pt.ulisboa.tecnico.surespace.common.message.SignedMessage
+  pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationResponse -up-|> pt.ulisboa.tecnico.surespace.common.message.SignedMessage
+  pt.ulisboa.tecnico.surespace.common.message.Validator o-- pt.ulisboa.tecnico.surespace.common.manager.GlobalManagerInterface : manager
+  pt.ulisboa.tecnico.surespace.common.message.Validator o-- pt.ulisboa.tecnico.surespace.common.message.exception.MessageValidatorException : exception
+  pt.ulisboa.tecnico.surespace.common.message.exception.MessageAssertionException -up-|> pt.ulisboa.tecnico.surespace.common.message.exception.MessageValidatorException
+  pt.ulisboa.tecnico.surespace.common.message.exception.MessageException -up-|> pt.ulisboa.tecnico.surespace.common.exception.BroadException
+  pt.ulisboa.tecnico.surespace.common.message.exception.MessageValidatorException -up-|> pt.ulisboa.tecnico.surespace.common.exception.BroadException
+  pt.ulisboa.tecnico.surespace.common.proof.Beacon -up-|> pt.ulisboa.tecnico.surespace.common.proof.Device
+  pt.ulisboa.tecnico.surespace.common.proof.Device -up-|> pt.ulisboa.tecnico.surespace.common.domain.Object
+  pt.ulisboa.tecnico.surespace.common.proof.LocationProof -up-|> pt.ulisboa.tecnico.surespace.common.domain.Object
+  pt.ulisboa.tecnico.surespace.common.proof.LocationProof o-- pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationResponse : authorization
+  pt.ulisboa.tecnico.surespace.common.proof.LocationProofProperties -up-|> pt.ulisboa.tecnico.surespace.common.domain.Object
+  pt.ulisboa.tecnico.surespace.common.proof.Witness -up-|> pt.ulisboa.tecnico.surespace.common.proof.Device
+  pt.ulisboa.tecnico.surespace.common.signal.Fragment -up-|> pt.ulisboa.tecnico.surespace.common.domain.Object
+  pt.ulisboa.tecnico.surespace.common.signal.Reading -up-|> pt.ulisboa.tecnico.surespace.common.domain.Object
+  pt.ulisboa.tecnico.surespace.common.signal.Reading o-- pt.ulisboa.tecnico.surespace.common.proof.Device : device
+  pt.ulisboa.tecnico.surespace.common.signal.Reading o-- pt.ulisboa.tecnico.surespace.common.signal.property.Property : property
+  pt.ulisboa.tecnico.surespace.common.signal.Signal -up-|> pt.ulisboa.tecnico.surespace.common.domain.Object
+  pt.ulisboa.tecnico.surespace.common.signal.Signal o-- pt.ulisboa.tecnico.surespace.common.proof.Beacon : beacon
+  pt.ulisboa.tecnico.surespace.common.signal.property.Amplitude -up-|> pt.ulisboa.tecnico.surespace.common.signal.property.Property
+  pt.ulisboa.tecnico.surespace.common.signal.property.Intensity -up-|> pt.ulisboa.tecnico.surespace.common.signal.property.Property
+  pt.ulisboa.tecnico.surespace.common.signal.property.Property -up-|> pt.ulisboa.tecnico.surespace.common.domain.Object
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

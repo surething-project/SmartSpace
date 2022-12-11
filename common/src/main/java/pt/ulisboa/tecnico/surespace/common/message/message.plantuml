@@ -1,0 +1,335 @@
+@startuml
+
+title __MESSAGE's Class Diagram__\n
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    abstract class pt.ulisboa.tecnico.surespace.common.message.Message {
+        # certificateBytes : byte[]
+        {static} - serialVersionUID : long
+        {abstract} + clone()
+        + equals()
+        + getCertificateBytes()
+        + getNonce()
+        + getReceiver()
+        + getSender()
+        + hashCode()
+        + toString()
+        # Message()
+        # setCertificateBytes()
+        # setNonce()
+        # setReceiver()
+        # setSender()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    abstract class pt.ulisboa.tecnico.surespace.common.message.Message.MessageBuilder {
+        + MessageBuilder()
+        + build()
+        + setCertificateBytes()
+        + setNonce()
+        + setNonce()
+        + setReceiver()
+        + setSender()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    class pt.ulisboa.tecnico.surespace.common.message.MessageValidator {
+        - message : Message<?>
+        + MessageValidator()
+        + assertCertificateValid()
+        + assertNonceValid()
+        + assertReceiver()
+        + assertReceiverKnown()
+        + assertReceiverUnknown()
+        + assertSender()
+        + assertSenderKnown()
+        + assertSenderUnknown()
+        + init()
+        # isInited()
+        # reset()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    abstract class pt.ulisboa.tecnico.surespace.common.message.SignedMessage {
+        # signature : byte[]
+        {static} - serialVersionUID : long
+        {abstract} + clone()
+        + equals()
+        + getMessage()
+        + getSignature()
+        + hashCode()
+        + toString()
+        # setMessage()
+        # setSignature()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    abstract class pt.ulisboa.tecnico.surespace.common.message.SignedMessage.SignedMessageBuilder {
+        + SignedMessageBuilder()
+        + build()
+        + setMessage()
+        + setSignature()
+        + setSignature()
+        - getMessageBytes()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    class pt.ulisboa.tecnico.surespace.common.message.SignedMessageValidator {
+        - message : SignedMessage<?>
+        + SignedMessageValidator()
+        + assertSignature()
+        + assertSignature()
+        + init()
+        # isInited()
+        # reset()
+        - checkSignature()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    class pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationRequest {
+        {static} - serialVersionUID : long
+        + clone()
+        {static} + newBuilder()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    class pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationRequest.ProveLocationRequest {
+        {static} - serialVersionUID : long
+        + clone()
+        + equals()
+        + getSignedRequestAuthorizationResponse()
+        + hashCode()
+        {static} + newBuilder()
+        + toString()
+        - ProveLocationRequest()
+        - setSignedRequestAuthorizationResponse()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    class pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationRequest.ProveLocationRequest.ProveLocationRequestBuilder {
+        + ProveLocationRequestBuilder()
+        + setSignedRequestAuthorizationResponse()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    class pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationRequest.SignedProveLocationRequestBuilder {
+        + SignedProveLocationRequestBuilder()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    class pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationResponse {
+        {static} - serialVersionUID : long
+        + clone()
+        {static} + newBuilder()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    class pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationResponse.ProveLocationResponse {
+        {static} - serialVersionUID : long
+        + clone()
+        {static} + newBuilder()
+        + toString()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    class pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationResponse.ProveLocationResponse.ProveLocationResponseBuilder {
+        + ProveLocationResponseBuilder()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    class pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationResponse.SignedProveLocationResponseBuilder {
+        + SignedProveLocationResponseBuilder()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    class pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationRequest {
+        {static} - serialVersionUID : long
+        + clone()
+        {static} + newBuilder()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    class pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationRequest.RequestAuthorizationRequest {
+        - location : Location<?>
+        {static} - serialVersionUID : long
+        - supportedBeacons : ArrayList<Beacon>
+        + clone()
+        + equals()
+        + getLocation()
+        + getSupportedBeacons()
+        + hashCode()
+        {static} + newBuilder()
+        + setSupportedBeacons()
+        + toString()
+        - RequestAuthorizationRequest()
+        - setLocation()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    class pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationRequest.RequestAuthorizationRequest.RequestAuthorizationRequestBuilder {
+        + RequestAuthorizationRequestBuilder()
+        + setLocation()
+        + setSupportedBeacons()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    class pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationRequest.SignedRequestAuthorizationRequestBuilder {
+        + SignedRequestAuthorizationRequestBuilder()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    class pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationResponse {
+        {static} - serialVersionUID : long
+        + clone()
+        {static} + newBuilder()
+        - SignedRequestAuthorizationResponse()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    class pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationResponse.RequestAuthorizationResponse {
+        - selectedBeacons : ArrayList<Beacon>
+        {static} - serialVersionUID : long
+        + clone()
+        + equals()
+        + getProperties()
+        + getSelectedBeacons()
+        + getSignedRequestAuthorizationRequest()
+        + getValidity()
+        + hashCode()
+        {static} + newBuilder()
+        + setSelectedBeacons()
+        + toString()
+        - RequestAuthorizationResponse()
+        - setProperties()
+        - setSignedRequestAuthorizationRequest()
+        - setValidity()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    class pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationResponse.RequestAuthorizationResponse.RequestAuthorizationResponseBuilder {
+        + RequestAuthorizationResponseBuilder()
+        + setProperties()
+        + setRequestAuthorizationRequest()
+        + setSelectedBeacons()
+        + setValidity()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    class pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationResponse.SignedRequestAuthorizationResponseBuilder {
+        + SignedRequestAuthorizationResponseBuilder()
+    }
+  }
+  
+
+  namespace pt.ulisboa.tecnico.surespace.common.message {
+    abstract class pt.ulisboa.tecnico.surespace.common.message.Validator {
+        + Validator()
+        {abstract} + init()
+        + validate()
+        {abstract} # isInited()
+        # noException()
+        {abstract} # reset()
+        # setException()
+        # shouldStop()
+    }
+  }
+  
+
+  pt.ulisboa.tecnico.surespace.common.message.Message -up-|> pt.ulisboa.tecnico.surespace.common.domain.Object
+  pt.ulisboa.tecnico.surespace.common.message.Message o-- pt.ulisboa.tecnico.surespace.common.domain.Nonce : nonce
+  pt.ulisboa.tecnico.surespace.common.message.Message o-- pt.ulisboa.tecnico.surespace.common.domain.Entity : receiver
+  pt.ulisboa.tecnico.surespace.common.message.Message o-- pt.ulisboa.tecnico.surespace.common.domain.Entity : sender
+  pt.ulisboa.tecnico.surespace.common.message.Message +-down- pt.ulisboa.tecnico.surespace.common.message.Message.MessageBuilder
+  pt.ulisboa.tecnico.surespace.common.message.Message.MessageBuilder o-- Message : message
+  pt.ulisboa.tecnico.surespace.common.message.MessageValidator -up-|> pt.ulisboa.tecnico.surespace.common.message.Validator
+  pt.ulisboa.tecnico.surespace.common.message.SignedMessage -up-|> pt.ulisboa.tecnico.surespace.common.domain.Object
+  pt.ulisboa.tecnico.surespace.common.message.SignedMessage o-- MessageType : message
+  pt.ulisboa.tecnico.surespace.common.message.SignedMessage +-down- pt.ulisboa.tecnico.surespace.common.message.SignedMessage.SignedMessageBuilder
+  pt.ulisboa.tecnico.surespace.common.message.SignedMessage.SignedMessageBuilder o-- SignedMessageType : signedMessage
+  pt.ulisboa.tecnico.surespace.common.message.SignedMessageValidator -up-|> pt.ulisboa.tecnico.surespace.common.message.Validator
+  pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationRequest -up-|> pt.ulisboa.tecnico.surespace.common.message.SignedMessage
+  pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationRequest +-down- pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationRequest.ProveLocationRequest
+  pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationRequest +-down- pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationRequest.SignedProveLocationRequestBuilder
+  pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationRequest.ProveLocationRequest -up-|> pt.ulisboa.tecnico.surespace.common.message.Message
+  pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationRequest.ProveLocationRequest o-- pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationResponse : signedRequestAuthorizationResponse
+  pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationRequest.ProveLocationRequest +-down- pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationRequest.ProveLocationRequest.ProveLocationRequestBuilder
+  pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationRequest.ProveLocationRequest.ProveLocationRequestBuilder -up-|> pt.ulisboa.tecnico.surespace.common.message.Message.MessageBuilder
+  pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationRequest.SignedProveLocationRequestBuilder -up-|> pt.ulisboa.tecnico.surespace.common.message.SignedMessage.SignedMessageBuilder
+  pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationResponse -up-|> pt.ulisboa.tecnico.surespace.common.message.SignedMessage
+  pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationResponse +-down- pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationResponse.ProveLocationResponse
+  pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationResponse +-down- pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationResponse.SignedProveLocationResponseBuilder
+  pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationResponse.ProveLocationResponse -up-|> pt.ulisboa.tecnico.surespace.common.message.Message
+  pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationResponse.ProveLocationResponse +-down- pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationResponse.ProveLocationResponse.ProveLocationResponseBuilder
+  pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationResponse.ProveLocationResponse.ProveLocationResponseBuilder -up-|> pt.ulisboa.tecnico.surespace.common.message.Message.MessageBuilder
+  pt.ulisboa.tecnico.surespace.common.message.SignedProveLocationResponse.SignedProveLocationResponseBuilder -up-|> pt.ulisboa.tecnico.surespace.common.message.SignedMessage.SignedMessageBuilder
+  pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationRequest -up-|> pt.ulisboa.tecnico.surespace.common.message.SignedMessage
+  pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationRequest +-down- pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationRequest.RequestAuthorizationRequest
+  pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationRequest +-down- pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationRequest.SignedRequestAuthorizationRequestBuilder
+  pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationRequest.RequestAuthorizationRequest -up-|> pt.ulisboa.tecnico.surespace.common.message.Message
+  pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationRequest.RequestAuthorizationRequest +-down- pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationRequest.RequestAuthorizationRequest.RequestAuthorizationRequestBuilder
+  pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationRequest.RequestAuthorizationRequest.RequestAuthorizationRequestBuilder -up-|> pt.ulisboa.tecnico.surespace.common.message.Message.MessageBuilder
+  pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationRequest.SignedRequestAuthorizationRequestBuilder -up-|> pt.ulisboa.tecnico.surespace.common.message.SignedMessage.SignedMessageBuilder
+  pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationResponse -up-|> pt.ulisboa.tecnico.surespace.common.message.SignedMessage
+  pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationResponse +-down- pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationResponse.RequestAuthorizationResponse
+  pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationResponse +-down- pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationResponse.SignedRequestAuthorizationResponseBuilder
+  pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationResponse.RequestAuthorizationResponse -up-|> pt.ulisboa.tecnico.surespace.common.message.Message
+  pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationResponse.RequestAuthorizationResponse o-- pt.ulisboa.tecnico.surespace.common.proof.LocationProofProperties : properties
+  pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationResponse.RequestAuthorizationResponse o-- pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationRequest : signedRequestAuthorizationRequest
+  pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationResponse.RequestAuthorizationResponse o-- pt.ulisboa.tecnico.surespace.common.domain.TimeInterval : validity
+  pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationResponse.RequestAuthorizationResponse +-down- pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationResponse.RequestAuthorizationResponse.RequestAuthorizationResponseBuilder
+  pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationResponse.RequestAuthorizationResponse.RequestAuthorizationResponseBuilder -up-|> pt.ulisboa.tecnico.surespace.common.message.Message.MessageBuilder
+  pt.ulisboa.tecnico.surespace.common.message.SignedRequestAuthorizationResponse.SignedRequestAuthorizationResponseBuilder -up-|> pt.ulisboa.tecnico.surespace.common.message.SignedMessage.SignedMessageBuilder
+  pt.ulisboa.tecnico.surespace.common.message.Validator o-- pt.ulisboa.tecnico.surespace.common.manager.GlobalManagerInterface : manager
+  pt.ulisboa.tecnico.surespace.common.message.Validator o-- pt.ulisboa.tecnico.surespace.common.message.exception.MessageValidatorException : exception
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

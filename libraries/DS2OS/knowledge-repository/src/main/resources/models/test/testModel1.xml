@@ -1,0 +1,17 @@
+<model type="/basic/composed">
+    <node1 type="/basic/composed">
+        <bool type="/derived/boolean">1</bool>
+        <submodel type="/test/testModel2" />
+    </node1>
+    <node2 type="/basic/composed">
+        <text type="/basic/text">TestText</text>
+        <number type="/basic/number">42</number>
+    </node2>
+    <listNode1 type="/basic/list" />
+    <listNode2 type="/basic/list" restriction="allowedTypes='/test/testModel2'">
+        <abc type="/test/testModel2" />
+        <jkl type="/test/testModel2" />
+        <ghi type="/test/testModel2" />
+        <def type="/test/testModel2" />
+    </listNode2>
+</model>
